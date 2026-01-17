@@ -14,10 +14,13 @@ if (!defined('ABSPATH')) {
  */
 function impexusone_register_menus() {
     register_nav_menus(array(
-        'primary'   => esc_html__('Primary Menu', 'impexusone'),
-        'mobile'    => esc_html__('Mobile Menu', 'impexusone'),
-        'footer'    => esc_html__('Footer Menu', 'impexusone'),
-        'legal'     => esc_html__('Legal Links Menu', 'impexusone'),
+        'primary'          => esc_html__('Primary Menu', 'impexusone'),
+        'mobile'           => esc_html__('Mobile Menu', 'impexusone'),
+        'footer'           => esc_html__('Footer Menu', 'impexusone'),
+        'footer-services'  => esc_html__('Footer Services', 'impexusone'),
+        'footer-insights'  => esc_html__('Footer Insights', 'impexusone'),
+        'footer-legal'     => esc_html__('Footer Legal Links', 'impexusone'),
+        'legal'            => esc_html__('Legal Links Menu', 'impexusone'),
     ));
 }
 add_action('after_setup_theme', 'impexusone_register_menus');

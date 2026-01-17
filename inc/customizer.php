@@ -509,6 +509,451 @@ function impexusone_customize_register($wp_customize) {
             'step' => 2,
         ),
     ));
+
+    // =========================================================================
+    // FOOTER PANEL
+    // =========================================================================
+    
+    $wp_customize->add_panel('impexusone_footer_panel', array(
+        'title'       => __('Footer', 'impexusone'),
+        'description' => __('All footer customization options.', 'impexusone'),
+        'priority'    => 35,
+    ));
+
+    // =========================================================================
+    // FOOTER SECTION 1: Newsletter
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_footer_newsletter', array(
+        'title'       => __('Newsletter', 'impexusone'),
+        'panel'       => 'impexusone_footer_panel',
+        'priority'    => 10,
+    ));
+
+    $wp_customize->add_setting('footer_show_newsletter', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('footer_show_newsletter', array(
+        'label'   => __('Show Newsletter Section', 'impexusone'),
+        'section' => 'impexusone_footer_newsletter',
+        'type'    => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('footer_newsletter_title', array(
+        'default'           => __('Stay informed', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_newsletter_title', array(
+        'label'   => __('Headline', 'impexusone'),
+        'section' => 'impexusone_footer_newsletter',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_newsletter_text', array(
+        'default'           => __('Subscribe for the latest insights on CSR and sustainable development.', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+
+    $wp_customize->add_control('footer_newsletter_text', array(
+        'label'   => __('Subtext', 'impexusone'),
+        'section' => 'impexusone_footer_newsletter',
+        'type'    => 'textarea',
+    ));
+
+    $wp_customize->add_setting('footer_newsletter_btn_text', array(
+        'default'           => __('Subscribe', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_newsletter_btn_text', array(
+        'label'   => __('Button Text', 'impexusone'),
+        'section' => 'impexusone_footer_newsletter',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_newsletter_bg_color', array(
+        'default'           => '#FDF2F8',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_newsletter_bg_color', array(
+        'label'   => __('Background Color', 'impexusone'),
+        'section' => 'impexusone_footer_newsletter',
+    )));
+
+    $wp_customize->add_setting('footer_newsletter_btn_color', array(
+        'default'           => '#0F766E',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_newsletter_btn_color', array(
+        'label'   => __('Button Color', 'impexusone'),
+        'section' => 'impexusone_footer_newsletter',
+    )));
+
+    // =========================================================================
+    // FOOTER SECTION 2: About & Branding
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_footer_about', array(
+        'title'       => __('About & Branding', 'impexusone'),
+        'panel'       => 'impexusone_footer_panel',
+        'priority'    => 20,
+    ));
+
+    $wp_customize->add_setting('footer_show_about', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('footer_show_about', array(
+        'label'   => __('Show About Section', 'impexusone'),
+        'section' => 'impexusone_footer_about',
+        'type'    => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('footer_company_tagline', array(
+        'default'           => __('Consultancy LLP', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_company_tagline', array(
+        'label'   => __('Company Tagline', 'impexusone'),
+        'section' => 'impexusone_footer_about',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_description', array(
+        'default'           => __('Empowering organizations through sustainable development strategies and impactful CSR initiatives. We bridge the gap between corporate vision and community needs.', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+
+    $wp_customize->add_control('footer_description', array(
+        'label'   => __('Company Description', 'impexusone'),
+        'section' => 'impexusone_footer_about',
+        'type'    => 'textarea',
+    ));
+
+    $wp_customize->add_setting('footer_show_social', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('footer_show_social', array(
+        'label'       => __('Show Social Icons', 'impexusone'),
+        'description' => __('Uses same URLs as header social icons.', 'impexusone'),
+        'section'     => 'impexusone_footer_about',
+        'type'        => 'checkbox',
+    ));
+
+    // =========================================================================
+    // FOOTER SECTION 3: Navigation Menus
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_footer_nav', array(
+        'title'       => __('Navigation Menus', 'impexusone'),
+        'description' => __('Assign WordPress menus to footer columns.', 'impexusone'),
+        'panel'       => 'impexusone_footer_panel',
+        'priority'    => 30,
+    ));
+
+    $wp_customize->add_setting('footer_show_menus', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('footer_show_menus', array(
+        'label'   => __('Show Menu Columns', 'impexusone'),
+        'section' => 'impexusone_footer_nav',
+        'type'    => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('footer_services_title', array(
+        'default'           => __('Our Services', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_services_title', array(
+        'label'   => __('Services Column Title', 'impexusone'),
+        'section' => 'impexusone_footer_nav',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_insights_title', array(
+        'default'           => __('Insights', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_insights_title', array(
+        'label'   => __('Insights Column Title', 'impexusone'),
+        'section' => 'impexusone_footer_nav',
+        'type'    => 'text',
+    ));
+
+    // =========================================================================
+    // FOOTER SECTION 4: Contact Details
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_footer_contact', array(
+        'title'       => __('Contact Details', 'impexusone'),
+        'panel'       => 'impexusone_footer_panel',
+        'priority'    => 40,
+    ));
+
+    $wp_customize->add_setting('footer_show_contact', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('footer_show_contact', array(
+        'label'   => __('Show Contact Section', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('footer_contact_title', array(
+        'default'           => __('Contact Us', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_contact_title', array(
+        'label'   => __('Section Title', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_contact_address', array(
+        'default'           => __("123 Sustainability Tower,\nGreen Business District,\nNew Delhi, India 110001", 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+
+    $wp_customize->add_control('footer_contact_address', array(
+        'label'   => __('Address', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'textarea',
+    ));
+
+    $wp_customize->add_setting('footer_contact_email', array(
+        'default'           => 'contact@impexus.com',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+
+    $wp_customize->add_control('footer_contact_email', array(
+        'label'   => __('Email', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'email',
+    ));
+
+    $wp_customize->add_setting('footer_contact_phone', array(
+        'default'           => '+91 11 2233 4455',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_contact_phone', array(
+        'label'   => __('Phone', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_show_cta', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('footer_show_cta', array(
+        'label'   => __('Show CTA Box', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('footer_cta_label', array(
+        'default'           => __('Need immediate assistance?', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_cta_label', array(
+        'label'   => __('CTA Label', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_cta_text', array(
+        'default'           => __('Book a Consultation', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_cta_text', array(
+        'label'   => __('CTA Button Text', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_cta_url', array(
+        'default'           => home_url('/contact/'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('footer_cta_url', array(
+        'label'   => __('CTA Button URL', 'impexusone'),
+        'section' => 'impexusone_footer_contact',
+        'type'    => 'url',
+    ));
+
+    // =========================================================================
+    // FOOTER SECTION 5: Bottom Bar
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_footer_bottom', array(
+        'title'       => __('Bottom Bar', 'impexusone'),
+        'panel'       => 'impexusone_footer_panel',
+        'priority'    => 50,
+    ));
+
+    $wp_customize->add_setting('footer_copyright_text', array(
+        'default'           => __('© %year% %sitename%. All rights reserved.', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_copyright_text', array(
+        'label'       => __('Copyright Text', 'impexusone'),
+        'description' => __('Use %year% for current year, %sitename% for site name.', 'impexusone'),
+        'section'     => 'impexusone_footer_bottom',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_bottom_layout', array(
+        'default'           => 'copyright-left',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_bottom_layout', array(
+        'label'   => __('Layout', 'impexusone'),
+        'section' => 'impexusone_footer_bottom',
+        'type'    => 'select',
+        'choices' => array(
+            'copyright-left'  => __('Copyright Left, Links Right', 'impexusone'),
+            'copyright-right' => __('Links Left, Copyright Right', 'impexusone'),
+        ),
+    ));
+
+    $wp_customize->add_setting('footer_bottom_bg_color', array(
+        'default'           => '#F9FAFB',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_bottom_bg_color', array(
+        'label'   => __('Background Color', 'impexusone'),
+        'section' => 'impexusone_footer_bottom',
+    )));
+
+    // =========================================================================
+    // FOOTER SECTION 6: Colors & Layout
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_footer_colors', array(
+        'title'       => __('Colors & Layout', 'impexusone'),
+        'panel'       => 'impexusone_footer_panel',
+        'priority'    => 60,
+    ));
+
+    $wp_customize->add_setting('footer_bg_color', array(
+        'default'           => '#FFFFFF',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_bg_color', array(
+        'label'   => __('Footer Background', 'impexusone'),
+        'section' => 'impexusone_footer_colors',
+    )));
+
+    $wp_customize->add_setting('footer_text_color', array(
+        'default'           => '#6B7280',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_text_color', array(
+        'label'   => __('Text Color', 'impexusone'),
+        'section' => 'impexusone_footer_colors',
+    )));
+
+    $wp_customize->add_setting('footer_heading_color', array(
+        'default'           => '#111827',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_heading_color', array(
+        'label'   => __('Heading Color', 'impexusone'),
+        'section' => 'impexusone_footer_colors',
+    )));
+
+    $wp_customize->add_setting('footer_link_color', array(
+        'default'           => '#374151',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_link_color', array(
+        'label'   => __('Link Color', 'impexusone'),
+        'section' => 'impexusone_footer_colors',
+    )));
+
+    $wp_customize->add_setting('footer_link_hover_color', array(
+        'default'           => '#0F766E',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_link_hover_color', array(
+        'label'   => __('Link Hover Color', 'impexusone'),
+        'section' => 'impexusone_footer_colors',
+    )));
+
+    $wp_customize->add_setting('footer_width_type', array(
+        'default'           => 'containerized',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_width_type', array(
+        'label'   => __('Footer Width', 'impexusone'),
+        'section' => 'impexusone_footer_colors',
+        'type'    => 'select',
+        'choices' => array(
+            'containerized' => __('Containerized', 'impexusone'),
+            'full-width'    => __('Full Width', 'impexusone'),
+        ),
+    ));
 }
 add_action('customize_register', 'impexusone_customize_register');
 
@@ -868,6 +1313,337 @@ function impexusone_customizer_css() {
 add_action('wp_head', 'impexusone_customizer_css');
 
 /**
+ * Output footer customizer CSS inline
+ */
+function impexusone_footer_css() {
+    // Get all footer settings
+    $newsletter_bg     = get_theme_mod('footer_newsletter_bg_color', '#FDF2F8');
+    $newsletter_btn    = get_theme_mod('footer_newsletter_btn_color', '#0F766E');
+    $footer_bg         = get_theme_mod('footer_bg_color', '#FFFFFF');
+    $footer_text       = get_theme_mod('footer_text_color', '#6B7280');
+    $footer_heading    = get_theme_mod('footer_heading_color', '#111827');
+    $footer_link       = get_theme_mod('footer_link_color', '#374151');
+    $footer_link_hover = get_theme_mod('footer_link_hover_color', '#0F766E');
+    $bottom_bg         = get_theme_mod('footer_bottom_bg_color', '#F9FAFB');
+    $bottom_layout     = get_theme_mod('footer_bottom_layout', 'copyright-left');
+    $footer_width      = get_theme_mod('footer_width_type', 'containerized');
+    ?>
+    <style id="impexusone-footer-css">
+        :root {
+            --footer-newsletter-bg: <?php echo esc_attr($newsletter_bg); ?>;
+            --footer-newsletter-btn: <?php echo esc_attr($newsletter_btn); ?>;
+            --footer-bg: <?php echo esc_attr($footer_bg); ?>;
+            --footer-text: <?php echo esc_attr($footer_text); ?>;
+            --footer-heading: <?php echo esc_attr($footer_heading); ?>;
+            --footer-link: <?php echo esc_attr($footer_link); ?>;
+            --footer-link-hover: <?php echo esc_attr($footer_link_hover); ?>;
+            --footer-bottom-bg: <?php echo esc_attr($bottom_bg); ?>;
+        }
+
+        /* Newsletter Section */
+        .footer-newsletter {
+            background-color: var(--footer-newsletter-bg);
+            padding: 3rem 0;
+        }
+
+        .footer-newsletter-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            <?php if ($footer_width === 'containerized') : ?>
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            <?php else : ?>
+            padding: 0 2rem;
+            <?php endif; ?>
+        }
+
+        .footer-newsletter-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--footer-heading);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-newsletter-content p {
+            color: var(--footer-text);
+            margin: 0;
+        }
+
+        .footer-newsletter-form {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-newsletter-form input[type="email"] {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            min-width: 280px;
+            font-size: 0.95rem;
+        }
+
+        .footer-newsletter-form button {
+            background-color: var(--footer-newsletter-btn);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: filter 0.2s;
+        }
+
+        .footer-newsletter-form button:hover {
+            filter: brightness(0.9);
+        }
+
+        /* Main Footer */
+        .footer-main {
+            background-color: var(--footer-bg);
+            padding: 4rem 0;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 2rem;
+            <?php if ($footer_width === 'containerized') : ?>
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            <?php else : ?>
+            padding: 0 2rem;
+            <?php endif; ?>
+        }
+
+        @media (max-width: 991px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-newsletter-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-newsletter-form {
+                flex-direction: column;
+                width: 100%;
+            }
+            .footer-newsletter-form input[type="email"] {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+
+        /* Footer About */
+        .footer-about .footer-description {
+            color: var(--footer-text);
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--footer-heading);
+            display: block;
+        }
+
+        .footer-logo-sub {
+            font-size: 0.8rem;
+            color: var(--footer-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer Nav */
+        .footer-nav-section h4 {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--footer-heading);
+            margin-bottom: 1rem;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-nav-link {
+            color: var(--footer-link);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-nav-link:hover {
+            color: var(--footer-link-hover);
+        }
+
+        /* Footer Contact */
+        .footer-contact-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-contact-icon {
+            color: var(--footer-link-hover);
+            font-size: 1.25rem;
+        }
+
+        .footer-contact-text {
+            color: var(--footer-text);
+            margin: 0;
+        }
+
+        .footer-contact-text a {
+            color: var(--footer-link);
+            text-decoration: none;
+        }
+
+        .footer-contact-text a:hover {
+            color: var(--footer-link-hover);
+        }
+
+        /* Footer CTA Box */
+        .footer-cta-box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-cta-box p {
+            color: var(--footer-text);
+            font-size: 0.875rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .footer-cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--footer-link-hover);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .footer-cta-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Social */
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            color: var(--footer-link);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .footer-social-link:hover {
+            background: var(--footer-link-hover);
+            color: #fff;
+        }
+
+        .footer-social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            background-color: var(--footer-bottom-bg);
+            padding: 1.5rem 0;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-bottom-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            <?php if ($footer_width === 'containerized') : ?>
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            <?php else : ?>
+            padding: 0 2rem;
+            <?php endif; ?>
+            <?php if ($bottom_layout === 'copyright-right') : ?>
+            flex-direction: row-reverse;
+            <?php endif; ?>
+        }
+
+        .footer-copyright {
+            color: var(--footer-text);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-link {
+            color: var(--footer-link);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-legal-link:hover {
+            color: var(--footer-link-hover);
+        }
+
+        @media (max-width: 575px) {
+            .footer-bottom-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-legal-links {
+                justify-content: center;
+            }
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'impexusone_footer_css');
+
+/**
  * Binds JS handlers for live preview in Customizer
  */
 function impexusone_customize_preview_js() {
@@ -880,3 +1656,4 @@ function impexusone_customize_preview_js() {
     );
 }
 add_action('customize_preview_init', 'impexusone_customize_preview_js');
+
