@@ -234,6 +234,201 @@ function impexusone_customize_register($wp_customize) {
         'section' => 'impexusone_header',
         'type'    => 'checkbox',
     ));
+
+    // =========================================================================
+    // HEADER LAYOUT SECTION (NEW - PILOT 2)
+    // =========================================================================
+
+    $wp_customize->add_section('impexusone_header_layout', array(
+        'title'       => __('Header Layout', 'impexusone'),
+        'description' => __('Configure header layout and width options.', 'impexusone'),
+        'priority'    => 31,
+    ));
+
+    // -------------------------------------------------------------------------
+    // Header Width Type
+    // -------------------------------------------------------------------------
+    $wp_customize->add_setting('header_width_type', array(
+        'default'           => 'containerized',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('header_width_type', array(
+        'label'   => __('Header Width', 'impexusone'),
+        'section' => 'impexusone_header_layout',
+        'type'    => 'select',
+        'choices' => array(
+            'containerized' => __('Containerized (max-width limited)', 'impexusone'),
+            'full-width'    => __('Full Width (edge to edge)', 'impexusone'),
+            'adaptive'      => __('Adaptive (full-width bg, containerized content)', 'impexusone'),
+        ),
+    ));
+
+    // -------------------------------------------------------------------------
+    // Header Content Max Width (for containerized/adaptive)
+    // -------------------------------------------------------------------------
+    $wp_customize->add_setting('header_max_width', array(
+        'default'           => 1200,
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control('header_max_width', array(
+        'label'       => __('Content Max Width (px)', 'impexusone'),
+        'description' => __('Applies to Containerized and Adaptive modes.', 'impexusone'),
+        'section'     => 'impexusone_header_layout',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 960,
+            'max'  => 1600,
+            'step' => 40,
+        ),
+    ));
+
+    // -------------------------------------------------------------------------
+    // Show/Hide Site Title
+    // -------------------------------------------------------------------------
+    $wp_customize->add_setting('show_site_title', array(
+        'default'           => true,
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('show_site_title', array(
+        'label'   => __('Show Site Title', 'impexusone'),
+        'section' => 'impexusone_header_layout',
+        'type'    => 'checkbox',
+    ));
+
+    // =========================================================================
+    // HEADER SOCIAL ICONS SECTION (NEW - PILOT 2)
+    // =========================================================================
+
+    $wp_customize->add_section('impexusone_header_social', array(
+        'title'       => __('Header Social Icons', 'impexusone'),
+        'description' => __('Configure social icons in the header. Leave URL blank to hide an icon.', 'impexusone'),
+        'priority'    => 32,
+    ));
+
+    // LinkedIn
+    $wp_customize->add_setting('social_linkedin_url', array(
+        'default'           => 'https://linkedin.com/company/impexus',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('social_linkedin_url', array(
+        'label'   => __('LinkedIn URL', 'impexusone'),
+        'section' => 'impexusone_header_social',
+        'type'    => 'url',
+    ));
+
+    // YouTube
+    $wp_customize->add_setting('social_youtube_url', array(
+        'default'           => 'https://youtube.com/@impexus',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('social_youtube_url', array(
+        'label'   => __('YouTube URL', 'impexusone'),
+        'section' => 'impexusone_header_social',
+        'type'    => 'url',
+    ));
+
+    // Twitter/X
+    $wp_customize->add_setting('social_twitter_url', array(
+        'default'           => '',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('social_twitter_url', array(
+        'label'   => __('Twitter/X URL', 'impexusone'),
+        'section' => 'impexusone_header_social',
+        'type'    => 'url',
+    ));
+
+    // Facebook
+    $wp_customize->add_setting('social_facebook_url', array(
+        'default'           => '',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('social_facebook_url', array(
+        'label'   => __('Facebook URL', 'impexusone'),
+        'section' => 'impexusone_header_social',
+        'type'    => 'url',
+    ));
+
+    // Instagram
+    $wp_customize->add_setting('social_instagram_url', array(
+        'default'           => '',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('social_instagram_url', array(
+        'label'   => __('Instagram URL', 'impexusone'),
+        'section' => 'impexusone_header_social',
+        'type'    => 'url',
+    ));
+
+    // =========================================================================
+    // HEADER SEARCH SECTION (NEW - PILOT 2)
+    // =========================================================================
+
+    $wp_customize->add_section('impexusone_header_search', array(
+        'title'       => __('Header Search', 'impexusone'),
+        'description' => __('Configure the search functionality in the header.', 'impexusone'),
+        'priority'    => 33,
+    ));
+
+    // Search Type
+    $wp_customize->add_setting('search_type', array(
+        'default'           => 'modal',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('search_type', array(
+        'label'   => __('Search Type', 'impexusone'),
+        'section' => 'impexusone_header_search',
+        'type'    => 'select',
+        'choices' => array(
+            'modal'    => __('Modal Popup (overlay)', 'impexusone'),
+            'dropdown' => __('Dropdown (under header)', 'impexusone'),
+            'inline'   => __('Inline (always visible)', 'impexusone'),
+        ),
+    ));
+
+    // Show Search
+    $wp_customize->add_setting('show_header_search', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('show_header_search', array(
+        'label'   => __('Show Search in Header', 'impexusone'),
+        'section' => 'impexusone_header_search',
+        'type'    => 'checkbox',
+    ));
+
+    // Search Placeholder Text
+    $wp_customize->add_setting('search_placeholder', array(
+        'default'           => __('Search...', 'impexusone'),
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('search_placeholder', array(
+        'label'   => __('Search Placeholder Text', 'impexusone'),
+        'section' => 'impexusone_header_search',
+        'type'    => 'text',
+    ));
 }
 add_action('customize_register', 'impexusone_customize_register');
 
@@ -258,6 +453,8 @@ function impexusone_customizer_css() {
     $cta_bg_color       = get_theme_mod('cta_bg_color', '#0F766E');
     $cta_text_color     = get_theme_mod('cta_text_color', '#FFFFFF');
     $cta_border_radius  = get_theme_mod('cta_border_radius', 8);
+    $header_width_type  = get_theme_mod('header_width_type', 'containerized');
+    $header_max_width   = get_theme_mod('header_max_width', 1200);
     ?>
     <style id="impexusone-customizer-css">
         :root {
@@ -271,6 +468,7 @@ function impexusone_customizer_css() {
             --customizer-cta-bg: <?php echo esc_attr($cta_bg_color); ?>;
             --customizer-cta-text: <?php echo esc_attr($cta_text_color); ?>;
             --customizer-cta-radius: <?php echo esc_attr($cta_border_radius); ?>px;
+            --customizer-header-max-width: <?php echo esc_attr($header_max_width); ?>px;
         }
 
         .site-header {
@@ -279,10 +477,33 @@ function impexusone_customizer_css() {
 
         .header-inner {
             height: var(--customizer-header-height);
+            <?php if ($header_width_type === 'containerized' || $header_width_type === 'adaptive') : ?>
+            max-width: var(--customizer-header-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            <?php elseif ($header_width_type === 'full-width') : ?>
+            max-width: none;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            <?php endif; ?>
         }
+
+        <?php if ($header_width_type === 'adaptive') : ?>
+        .site-header {
+            width: 100%;
+        }
+        <?php endif; ?>
 
         .site-logo {
             height: var(--customizer-logo-max-height);
+        }
+
+        .site-logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
         }
 
         .site-title,
@@ -311,6 +532,148 @@ function impexusone_customizer_css() {
         .header-cta:hover {
             background-color: var(--customizer-cta-bg);
             filter: brightness(0.9);
+        }
+
+        /* Search Modal Styles */
+        .search-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .search-modal.is-open {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 10vh;
+        }
+
+        .search-modal-content {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .search-modal-form {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .search-modal-input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-modal-input:focus {
+            border-color: var(--customizer-cta-bg);
+        }
+
+        .search-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #fff;
+            line-height: 1;
+        }
+
+        /* Header Search Dropdown */
+        .search-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+        }
+
+        .search-dropdown.is-open {
+            display: block;
+        }
+
+        .search-dropdown form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-dropdown input {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+
+        /* Inline Search */
+        .header-search-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-search-inline input {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px 0 0 6px;
+            width: 180px;
+        }
+
+        .header-search-inline button {
+            padding: 0.5rem 0.75rem;
+            background: var(--customizer-cta-bg);
+            color: #fff;
+            border: none;
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+        }
+
+        /* Mobile Search */
+        .mobile-search {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mobile-search form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .mobile-search input[type="search"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .mobile-search button {
+            padding: 0.75rem;
+            background: var(--customizer-cta-bg);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Header position relative for dropdown */
+        .header-actions {
+            position: relative;
         }
     </style>
     <?php
