@@ -104,64 +104,15 @@
     });
 
     // =========================================================================
-    // Header Pilot 2 - New Settings
+    // Header Pilot 3 - New Settings
     // =========================================================================
 
-    // Show/Hide Site Title
-    wp.customize('show_site_title', function (value) {
+    // Social Icon Size
+    wp.customize('social_icon_size', function (value) {
         value.bind(function (newval) {
-            var $title = $('.site-title');
-            if (newval) {
-                $title.show();
-            } else {
-                $title.hide();
-            }
-        });
-    });
-
-    // Header Max Width
-    wp.customize('header_max_width', function (value) {
-        value.bind(function (newval) {
-            document.documentElement.style.setProperty('--customizer-header-max-width', newval + 'px');
-        });
-    });
-
-    // Header Width Type (requires page refresh for full effect, but we can do partial)
-    wp.customize('header_width_type', function (value) {
-        value.bind(function (newval) {
-            var $header = $('.site-header');
-            var $inner = $('.header-inner');
-
-            // Remove existing width classes
-            $header.removeClass('header-full-width header-adaptive');
-
-            if (newval === 'full-width') {
-                $header.addClass('header-full-width');
-                $inner.css({
-                    'max-width': 'none',
-                    'padding-left': '2rem',
-                    'padding-right': '2rem'
-                });
-            } else if (newval === 'adaptive') {
-                $header.addClass('header-adaptive');
-                $inner.css({
-                    'max-width': 'var(--customizer-header-max-width)',
-                    'margin-left': 'auto',
-                    'margin-right': 'auto',
-                    'padding-left': '1rem',
-                    'padding-right': '1rem'
-                });
-            } else {
-                // containerized
-                $inner.css({
-                    'max-width': 'var(--customizer-header-max-width)',
-                    'margin-left': 'auto',
-                    'margin-right': 'auto',
-                    'padding-left': '1rem',
-                    'padding-right': '1rem'
-                });
-            }
+            document.documentElement.style.setProperty('--customizer-social-icon-size', newval + 'px');
         });
     });
 
 })(jQuery);
+

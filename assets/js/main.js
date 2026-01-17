@@ -58,31 +58,47 @@
     }
 
     /**
-     * Search Modal/Dropdown Toggle
+     * Search Modal/Dropdown Toggle (Pilot 3 - Fixed)
      */
     function initSearch() {
         const searchToggle = document.getElementById('search-toggle');
         const searchModal = document.getElementById('search-modal');
         const searchDropdown = document.getElementById('search-dropdown');
-        const searchModalClose = document.querySelector('.search-modal-close');
+        const searchModalClose = document.getElementById('search-modal-close');
+        const searchModalContent = searchModal ? searchModal.querySelector('.search-modal-content') : null;
+
+        // Helper to close modal
+        function closeModal() {
+            if (searchModal) {
+                searchModal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Helper to close dropdown
+        function closeDropdown() {
+            if (searchDropdown) {
+                searchDropdown.classList.remove('is-open');
+            }
+        }
 
         if (!searchToggle) return;
 
         const searchType = searchToggle.dataset.searchType || 'modal';
 
+        // Toggle button click
         searchToggle.addEventListener('click', function (e) {
+            e.preventDefault();
             e.stopPropagation();
 
             if (searchType === 'modal' && searchModal) {
-                // Open modal search
                 searchModal.classList.add('is-open');
                 document.body.style.overflow = 'hidden';
                 const input = searchModal.querySelector('input[type="search"]');
                 if (input) {
-                    setTimeout(() => input.focus(), 100);
+                    setTimeout(() => input.focus(), 150);
                 }
             } else if (searchType === 'dropdown' && searchDropdown) {
-                // Toggle dropdown search
                 searchDropdown.classList.toggle('is-open');
                 const input = searchDropdown.querySelector('input[type="search"]');
                 if (input && searchDropdown.classList.contains('is-open')) {
@@ -91,20 +107,28 @@
             }
         });
 
-        // Close modal on close button click
-        if (searchModalClose && searchModal) {
-            searchModalClose.addEventListener('click', function () {
-                searchModal.classList.remove('is-open');
-                document.body.style.overflow = '';
+        // Close modal on X button click
+        if (searchModalClose) {
+            searchModalClose.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeModal();
             });
         }
 
-        // Close modal on backdrop click
+        // Prevent clicks on modal content from closing modal
+        if (searchModalContent) {
+            searchModalContent.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        }
+
+        // Close modal on backdrop (overlay) click
         if (searchModal) {
             searchModal.addEventListener('click', function (e) {
+                // Only close if clicking directly on the modal backdrop
                 if (e.target === searchModal) {
-                    searchModal.classList.remove('is-open');
-                    document.body.style.overflow = '';
+                    closeModal();
                 }
             });
         }
@@ -113,7 +137,7 @@
         if (searchDropdown) {
             document.addEventListener('click', function (e) {
                 if (!searchDropdown.contains(e.target) && !searchToggle.contains(e.target)) {
-                    searchDropdown.classList.remove('is-open');
+                    closeDropdown();
                 }
             });
         }
@@ -122,13 +146,12 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 if (searchModal && searchModal.classList.contains('is-open')) {
-                    searchModal.classList.remove('is-open');
-                    document.body.style.overflow = '';
-                    searchToggle.focus();
+                    closeModal();
+                    if (searchToggle) searchToggle.focus();
                 }
                 if (searchDropdown && searchDropdown.classList.contains('is-open')) {
-                    searchDropdown.classList.remove('is-open');
-                    searchToggle.focus();
+                    closeDropdown();
+                    if (searchToggle) searchToggle.focus();
                 }
             }
         });

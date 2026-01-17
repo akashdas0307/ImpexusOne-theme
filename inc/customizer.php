@@ -1,8 +1,8 @@
 <?php
 /**
- * Theme Customizer - Header Controls
+ * Theme Customizer - Header Controls (Pilot 3)
  *
- * Adds Customizer controls for header customization.
+ * All header customization options consolidated under one panel.
  *
  * @package ImpexusOne
  */
@@ -17,18 +17,27 @@ if (!defined('ABSPATH')) {
 function impexusone_customize_register($wp_customize) {
     
     // =========================================================================
-    // HEADER SECTION
+    // HEADER PANEL (Umbrella for all header sections)
     // =========================================================================
     
-    $wp_customize->add_section('impexusone_header', array(
+    $wp_customize->add_panel('impexusone_header_panel', array(
         'title'       => __('Header', 'impexusone'),
-        'description' => __('Customize the header appearance.', 'impexusone'),
+        'description' => __('All header customization options.', 'impexusone'),
         'priority'    => 30,
     ));
 
-    // -------------------------------------------------------------------------
+    // =========================================================================
+    // SECTION: General Settings
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_header_general', array(
+        'title'       => __('General', 'impexusone'),
+        'description' => __('Basic header settings.', 'impexusone'),
+        'panel'       => 'impexusone_header_panel',
+        'priority'    => 10,
+    ));
+
     // Header Height
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('header_height', array(
         'default'           => 80,
         'transport'         => 'postMessage',
@@ -37,7 +46,7 @@ function impexusone_customize_register($wp_customize) {
 
     $wp_customize->add_control('header_height', array(
         'label'       => __('Header Height (px)', 'impexusone'),
-        'section'     => 'impexusone_header',
+        'section'     => 'impexusone_header_general',
         'type'        => 'range',
         'input_attrs' => array(
             'min'  => 60,
@@ -46,9 +55,77 @@ function impexusone_customize_register($wp_customize) {
         ),
     ));
 
-    // -------------------------------------------------------------------------
+    // Header Background Color
+    $wp_customize->add_setting('header_bg_color', array(
+        'default'           => '#FFFFFF',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_bg_color', array(
+        'label'   => __('Background Color', 'impexusone'),
+        'section' => 'impexusone_header_general',
+    )));
+
+    // Header Text Color
+    $wp_customize->add_setting('header_text_color', array(
+        'default'           => '#111827',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_text_color', array(
+        'label'   => __('Text Color', 'impexusone'),
+        'section' => 'impexusone_header_general',
+    )));
+
+    // Header Width Type
+    $wp_customize->add_setting('header_width_type', array(
+        'default'           => 'containerized',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('header_width_type', array(
+        'label'   => __('Layout Width', 'impexusone'),
+        'section' => 'impexusone_header_general',
+        'type'    => 'select',
+        'choices' => array(
+            'containerized' => __('Containerized', 'impexusone'),
+            'full-width'    => __('Full Width', 'impexusone'),
+            'adaptive'      => __('Adaptive', 'impexusone'),
+        ),
+    ));
+
+    // Header Content Max Width
+    $wp_customize->add_setting('header_max_width', array(
+        'default'           => 1200,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control('header_max_width', array(
+        'label'       => __('Content Max Width (px)', 'impexusone'),
+        'section'     => 'impexusone_header_general',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 960,
+            'max'  => 1600,
+            'step' => 40,
+        ),
+    ));
+
+    // =========================================================================
+    // SECTION: Logo & Branding
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_header_branding', array(
+        'title'       => __('Logo & Branding', 'impexusone'),
+        'panel'       => 'impexusone_header_panel',
+        'priority'    => 20,
+    ));
+
     // Logo Max Height
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('logo_max_height', array(
         'default'           => 48,
         'transport'         => 'postMessage',
@@ -57,46 +134,52 @@ function impexusone_customize_register($wp_customize) {
 
     $wp_customize->add_control('logo_max_height', array(
         'label'       => __('Logo Max Height (px)', 'impexusone'),
-        'section'     => 'impexusone_header',
+        'section'     => 'impexusone_header_branding',
         'type'        => 'range',
         'input_attrs' => array(
-            'min'  => 32,
+            'min'  => 24,
             'max'  => 80,
             'step' => 4,
         ),
     ));
 
-    // -------------------------------------------------------------------------
-    // Header Background Color
-    // -------------------------------------------------------------------------
-    $wp_customize->add_setting('header_bg_color', array(
-        'default'           => '#FFFFFF',
+    // Show Site Title
+    $wp_customize->add_setting('show_site_title', array(
+        'default'           => true,
         'transport'         => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_bg_color', array(
-        'label'   => __('Header Background Color', 'impexusone'),
-        'section' => 'impexusone_header',
-    )));
-
-    // -------------------------------------------------------------------------
-    // Header Text Color
-    // -------------------------------------------------------------------------
-    $wp_customize->add_setting('header_text_color', array(
-        'default'           => '#111827',
-        'transport'         => 'postMessage',
-        'sanitize_callback' => 'sanitize_hex_color',
+    $wp_customize->add_control('show_site_title', array(
+        'label'   => __('Show Site Title', 'impexusone'),
+        'section' => 'impexusone_header_branding',
+        'type'    => 'checkbox',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_text_color', array(
-        'label'   => __('Header Text Color', 'impexusone'),
-        'section' => 'impexusone_header',
-    )));
+    // Show Tagline
+    $wp_customize->add_setting('show_tagline', array(
+        'default'           => true,
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
 
-    // -------------------------------------------------------------------------
+    $wp_customize->add_control('show_tagline', array(
+        'label'   => __('Show Site Tagline', 'impexusone'),
+        'section' => 'impexusone_header_branding',
+        'type'    => 'checkbox',
+    ));
+
+    // =========================================================================
+    // SECTION: Navigation
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_header_nav', array(
+        'title'       => __('Navigation', 'impexusone'),
+        'panel'       => 'impexusone_header_panel',
+        'priority'    => 30,
+    ));
+
     // Navigation Font Family
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('nav_font_family', array(
         'default'           => 'Inter',
         'transport'         => 'postMessage',
@@ -104,8 +187,8 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('nav_font_family', array(
-        'label'   => __('Navigation Font Family', 'impexusone'),
-        'section' => 'impexusone_header',
+        'label'   => __('Font Family', 'impexusone'),
+        'section' => 'impexusone_header_nav',
         'type'    => 'select',
         'choices' => array(
             'Inter'      => 'Inter',
@@ -117,9 +200,7 @@ function impexusone_customize_register($wp_customize) {
         ),
     ));
 
-    // -------------------------------------------------------------------------
     // Navigation Font Size
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('nav_font_size', array(
         'default'           => 14,
         'transport'         => 'postMessage',
@@ -127,8 +208,8 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('nav_font_size', array(
-        'label'       => __('Navigation Font Size (px)', 'impexusone'),
-        'section'     => 'impexusone_header',
+        'label'       => __('Font Size (px)', 'impexusone'),
+        'section'     => 'impexusone_header_nav',
         'type'        => 'range',
         'input_attrs' => array(
             'min'  => 12,
@@ -137,9 +218,7 @@ function impexusone_customize_register($wp_customize) {
         ),
     ));
 
-    // -------------------------------------------------------------------------
     // Navigation Link Spacing
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('nav_link_spacing', array(
         'default'           => 12,
         'transport'         => 'postMessage',
@@ -147,8 +226,8 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('nav_link_spacing', array(
-        'label'       => __('Navigation Link Spacing (px)', 'impexusone'),
-        'section'     => 'impexusone_header',
+        'label'       => __('Link Spacing (px)', 'impexusone'),
+        'section'     => 'impexusone_header_nav',
         'type'        => 'range',
         'input_attrs' => array(
             'min'  => 8,
@@ -157,9 +236,30 @@ function impexusone_customize_register($wp_customize) {
         ),
     ));
 
-    // -------------------------------------------------------------------------
+    // Show Submenu Arrows
+    $wp_customize->add_setting('show_submenu_arrows', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('show_submenu_arrows', array(
+        'label'   => __('Show Dropdown Arrows', 'impexusone'),
+        'section' => 'impexusone_header_nav',
+        'type'    => 'checkbox',
+    ));
+
+    // =========================================================================
+    // SECTION: CTA Button
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_header_cta', array(
+        'title'       => __('CTA Button', 'impexusone'),
+        'panel'       => 'impexusone_header_panel',
+        'priority'    => 40,
+    ));
+
     // CTA Button Background Color
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('cta_bg_color', array(
         'default'           => '#0F766E',
         'transport'         => 'postMessage',
@@ -167,13 +267,11 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cta_bg_color', array(
-        'label'   => __('CTA Button Background', 'impexusone'),
-        'section' => 'impexusone_header',
+        'label'   => __('Background Color', 'impexusone'),
+        'section' => 'impexusone_header_cta',
     )));
 
-    // -------------------------------------------------------------------------
     // CTA Button Text Color
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('cta_text_color', array(
         'default'           => '#FFFFFF',
         'transport'         => 'postMessage',
@@ -181,13 +279,11 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cta_text_color', array(
-        'label'   => __('CTA Button Text Color', 'impexusone'),
-        'section' => 'impexusone_header',
+        'label'   => __('Text Color', 'impexusone'),
+        'section' => 'impexusone_header_cta',
     )));
 
-    // -------------------------------------------------------------------------
     // CTA Button Border Radius
-    // -------------------------------------------------------------------------
     $wp_customize->add_setting('cta_border_radius', array(
         'default'           => 8,
         'transport'         => 'postMessage',
@@ -195,8 +291,8 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('cta_border_radius', array(
-        'label'       => __('CTA Button Border Radius (px)', 'impexusone'),
-        'section'     => 'impexusone_header',
+        'label'       => __('Border Radius (px)', 'impexusone'),
+        'section'     => 'impexusone_header_cta',
         'type'        => 'range',
         'input_attrs' => array(
             'min'  => 0,
@@ -205,24 +301,18 @@ function impexusone_customize_register($wp_customize) {
         ),
     ));
 
-    // -------------------------------------------------------------------------
-    // Show/Hide Site Tagline
-    // -------------------------------------------------------------------------
-    $wp_customize->add_setting('show_tagline', array(
-        'default'           => true,
-        'transport'         => 'postMessage',
-        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    // =========================================================================
+    // SECTION: Social Icons
+    // =========================================================================
+    
+    $wp_customize->add_section('impexusone_header_social', array(
+        'title'       => __('Social Icons', 'impexusone'),
+        'description' => __('Leave URL blank to hide an icon.', 'impexusone'),
+        'panel'       => 'impexusone_header_panel',
+        'priority'    => 50,
     ));
 
-    $wp_customize->add_control('show_tagline', array(
-        'label'   => __('Show Site Tagline', 'impexusone'),
-        'section' => 'impexusone_header',
-        'type'    => 'checkbox',
-    ));
-
-    // -------------------------------------------------------------------------
-    // Show/Hide Social Icons
-    // -------------------------------------------------------------------------
+    // Show Social Icons
     $wp_customize->add_setting('show_header_social', array(
         'default'           => true,
         'transport'         => 'postMessage',
@@ -230,88 +320,30 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('show_header_social', array(
-        'label'   => __('Show Social Icons in Header', 'impexusone'),
-        'section' => 'impexusone_header',
+        'label'   => __('Show Social Icons', 'impexusone'),
+        'section' => 'impexusone_header_social',
         'type'    => 'checkbox',
     ));
 
-    // =========================================================================
-    // HEADER LAYOUT SECTION (NEW - PILOT 2)
-    // =========================================================================
-
-    $wp_customize->add_section('impexusone_header_layout', array(
-        'title'       => __('Header Layout', 'impexusone'),
-        'description' => __('Configure header layout and width options.', 'impexusone'),
-        'priority'    => 31,
-    ));
-
-    // -------------------------------------------------------------------------
-    // Header Width Type
-    // -------------------------------------------------------------------------
-    $wp_customize->add_setting('header_width_type', array(
-        'default'           => 'containerized',
-        'transport'         => 'postMessage',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control('header_width_type', array(
-        'label'   => __('Header Width', 'impexusone'),
-        'section' => 'impexusone_header_layout',
-        'type'    => 'select',
-        'choices' => array(
-            'containerized' => __('Containerized (max-width limited)', 'impexusone'),
-            'full-width'    => __('Full Width (edge to edge)', 'impexusone'),
-            'adaptive'      => __('Adaptive (full-width bg, containerized content)', 'impexusone'),
-        ),
-    ));
-
-    // -------------------------------------------------------------------------
-    // Header Content Max Width (for containerized/adaptive)
-    // -------------------------------------------------------------------------
-    $wp_customize->add_setting('header_max_width', array(
-        'default'           => 1200,
+    // Social Icon Size
+    $wp_customize->add_setting('social_icon_size', array(
+        'default'           => 20,
         'transport'         => 'postMessage',
         'sanitize_callback' => 'absint',
     ));
 
-    $wp_customize->add_control('header_max_width', array(
-        'label'       => __('Content Max Width (px)', 'impexusone'),
-        'description' => __('Applies to Containerized and Adaptive modes.', 'impexusone'),
-        'section'     => 'impexusone_header_layout',
-        'type'        => 'number',
+    $wp_customize->add_control('social_icon_size', array(
+        'label'       => __('Icon Size (px)', 'impexusone'),
+        'section'     => 'impexusone_header_social',
+        'type'        => 'range',
         'input_attrs' => array(
-            'min'  => 960,
-            'max'  => 1600,
-            'step' => 40,
+            'min'  => 16,
+            'max'  => 32,
+            'step' => 2,
         ),
     ));
 
-    // -------------------------------------------------------------------------
-    // Show/Hide Site Title
-    // -------------------------------------------------------------------------
-    $wp_customize->add_setting('show_site_title', array(
-        'default'           => true,
-        'transport'         => 'postMessage',
-        'sanitize_callback' => 'impexusone_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control('show_site_title', array(
-        'label'   => __('Show Site Title', 'impexusone'),
-        'section' => 'impexusone_header_layout',
-        'type'    => 'checkbox',
-    ));
-
-    // =========================================================================
-    // HEADER SOCIAL ICONS SECTION (NEW - PILOT 2)
-    // =========================================================================
-
-    $wp_customize->add_section('impexusone_header_social', array(
-        'title'       => __('Header Social Icons', 'impexusone'),
-        'description' => __('Configure social icons in the header. Leave URL blank to hide an icon.', 'impexusone'),
-        'priority'    => 32,
-    ));
-
-    // LinkedIn
+    // LinkedIn URL
     $wp_customize->add_setting('social_linkedin_url', array(
         'default'           => 'https://linkedin.com/company/impexus',
         'transport'         => 'refresh',
@@ -324,7 +356,7 @@ function impexusone_customize_register($wp_customize) {
         'type'    => 'url',
     ));
 
-    // YouTube
+    // YouTube URL
     $wp_customize->add_setting('social_youtube_url', array(
         'default'           => 'https://youtube.com/@impexus',
         'transport'         => 'refresh',
@@ -337,7 +369,7 @@ function impexusone_customize_register($wp_customize) {
         'type'    => 'url',
     ));
 
-    // Twitter/X
+    // Twitter/X URL
     $wp_customize->add_setting('social_twitter_url', array(
         'default'           => '',
         'transport'         => 'refresh',
@@ -350,7 +382,7 @@ function impexusone_customize_register($wp_customize) {
         'type'    => 'url',
     ));
 
-    // Facebook
+    // Facebook URL
     $wp_customize->add_setting('social_facebook_url', array(
         'default'           => '',
         'transport'         => 'refresh',
@@ -363,7 +395,7 @@ function impexusone_customize_register($wp_customize) {
         'type'    => 'url',
     ));
 
-    // Instagram
+    // Instagram URL
     $wp_customize->add_setting('social_instagram_url', array(
         'default'           => '',
         'transport'         => 'refresh',
@@ -377,13 +409,26 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     // =========================================================================
-    // HEADER SEARCH SECTION (NEW - PILOT 2)
+    // SECTION: Search
     // =========================================================================
-
+    
     $wp_customize->add_section('impexusone_header_search', array(
-        'title'       => __('Header Search', 'impexusone'),
-        'description' => __('Configure the search functionality in the header.', 'impexusone'),
-        'priority'    => 33,
+        'title'       => __('Search', 'impexusone'),
+        'panel'       => 'impexusone_header_panel',
+        'priority'    => 60,
+    ));
+
+    // Show Search
+    $wp_customize->add_setting('show_header_search', array(
+        'default'           => true,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'impexusone_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('show_header_search', array(
+        'label'   => __('Show Search', 'impexusone'),
+        'section' => 'impexusone_header_search',
+        'type'    => 'checkbox',
     ));
 
     // Search Type
@@ -398,26 +443,13 @@ function impexusone_customize_register($wp_customize) {
         'section' => 'impexusone_header_search',
         'type'    => 'select',
         'choices' => array(
-            'modal'    => __('Modal Popup (overlay)', 'impexusone'),
-            'dropdown' => __('Dropdown (under header)', 'impexusone'),
-            'inline'   => __('Inline (always visible)', 'impexusone'),
+            'modal'    => __('Modal Popup', 'impexusone'),
+            'dropdown' => __('Dropdown', 'impexusone'),
+            'inline'   => __('Inline (desktop only)', 'impexusone'),
         ),
     ));
 
-    // Show Search
-    $wp_customize->add_setting('show_header_search', array(
-        'default'           => true,
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'impexusone_sanitize_checkbox',
-    ));
-
-    $wp_customize->add_control('show_header_search', array(
-        'label'   => __('Show Search in Header', 'impexusone'),
-        'section' => 'impexusone_header_search',
-        'type'    => 'checkbox',
-    ));
-
-    // Search Placeholder Text
+    // Search Placeholder
     $wp_customize->add_setting('search_placeholder', array(
         'default'           => __('Search...', 'impexusone'),
         'transport'         => 'refresh',
@@ -425,9 +457,57 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('search_placeholder', array(
-        'label'   => __('Search Placeholder Text', 'impexusone'),
+        'label'   => __('Placeholder Text', 'impexusone'),
         'section' => 'impexusone_header_search',
         'type'    => 'text',
+    ));
+
+    // Inline Search Width
+    $wp_customize->add_setting('search_inline_width', array(
+        'default'           => 200,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control('search_inline_width', array(
+        'label'       => __('Inline Search Width (px)', 'impexusone'),
+        'section'     => 'impexusone_header_search',
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min'  => 120,
+            'max'  => 400,
+            'step' => 10,
+        ),
+    ));
+
+    // Search Button Color
+    $wp_customize->add_setting('search_btn_color', array(
+        'default'           => '#0F766E',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'search_btn_color', array(
+        'label'   => __('Search Button Color', 'impexusone'),
+        'section' => 'impexusone_header_search',
+    )));
+
+    // Search Input Border Radius
+    $wp_customize->add_setting('search_border_radius', array(
+        'default'           => 6,
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control('search_border_radius', array(
+        'label'       => __('Border Radius (px)', 'impexusone'),
+        'section'     => 'impexusone_header_search',
+        'type'        => 'range',
+        'input_attrs' => array(
+            'min'  => 0,
+            'max'  => 20,
+            'step' => 2,
+        ),
     ));
 }
 add_action('customize_register', 'impexusone_customize_register');
@@ -455,6 +535,11 @@ function impexusone_customizer_css() {
     $cta_border_radius  = get_theme_mod('cta_border_radius', 8);
     $header_width_type  = get_theme_mod('header_width_type', 'containerized');
     $header_max_width   = get_theme_mod('header_max_width', 1200);
+    $social_icon_size   = get_theme_mod('social_icon_size', 20);
+    $search_inline_w    = get_theme_mod('search_inline_width', 200);
+    $search_btn_color   = get_theme_mod('search_btn_color', '#0F766E');
+    $search_radius      = get_theme_mod('search_border_radius', 6);
+    $show_submenu_arrows = get_theme_mod('show_submenu_arrows', true);
     ?>
     <style id="impexusone-customizer-css">
         :root {
@@ -469,24 +554,33 @@ function impexusone_customizer_css() {
             --customizer-cta-text: <?php echo esc_attr($cta_text_color); ?>;
             --customizer-cta-radius: <?php echo esc_attr($cta_border_radius); ?>px;
             --customizer-header-max-width: <?php echo esc_attr($header_max_width); ?>px;
+            --customizer-social-icon-size: <?php echo esc_attr($social_icon_size); ?>px;
+            --customizer-search-btn-color: <?php echo esc_attr($search_btn_color); ?>;
+            --customizer-search-radius: <?php echo esc_attr($search_radius); ?>px;
+            --customizer-search-inline-width: <?php echo esc_attr($search_inline_w); ?>px;
         }
 
+        /* Header Base */
         .site-header {
             background-color: var(--customizer-header-bg);
         }
 
         .header-inner {
             height: var(--customizer-header-height);
-            <?php if ($header_width_type === 'containerized' || $header_width_type === 'adaptive') : ?>
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            <?php if ($header_width_type === 'containerized') : ?>
             max-width: var(--customizer-header-max-width);
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            margin: 0 auto;
+            padding: 0 1rem;
             <?php elseif ($header_width_type === 'full-width') : ?>
-            max-width: none;
-            padding-left: 2rem;
-            padding-right: 2rem;
+            max-width: 100%;
+            padding: 0 2rem;
+            <?php else : ?>
+            max-width: var(--customizer-header-max-width);
+            margin: 0 auto;
+            padding: 0 1rem;
             <?php endif; ?>
         }
 
@@ -496,8 +590,11 @@ function impexusone_customizer_css() {
         }
         <?php endif; ?>
 
+        /* Logo */
         .site-logo {
             height: var(--customizer-logo-max-height);
+            display: flex;
+            align-items: center;
         }
 
         .site-logo img {
@@ -506,12 +603,14 @@ function impexusone_customizer_css() {
             object-fit: contain;
         }
 
+        /* Text Colors */
         .site-title,
         .site-tagline,
         .nav-menu > li > a {
             color: var(--customizer-header-text);
         }
 
+        /* Navigation */
         .primary-nav,
         .nav-menu > li > a {
             font-family: var(--customizer-nav-font);
@@ -523,6 +622,22 @@ function impexusone_customizer_css() {
             padding-right: var(--customizer-nav-spacing);
         }
 
+        /* Submenu Arrow Indicators */
+        <?php if ($show_submenu_arrows) : ?>
+        .nav-menu > li.menu-item-has-children > a::after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 6px;
+            vertical-align: middle;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid currentColor;
+        }
+        <?php endif; ?>
+
+        /* CTA Button */
         .header-cta {
             background-color: var(--customizer-cta-bg);
             color: var(--customizer-cta-text);
@@ -534,29 +649,38 @@ function impexusone_customizer_css() {
             filter: brightness(0.9);
         }
 
-        /* Search Modal Styles */
+        /* Social Icons */
+        .header-social .social-link svg,
+        .mobile-social .social-link svg {
+            width: var(--customizer-social-icon-size);
+            height: var(--customizer-social-icon-size);
+        }
+
+        /* Search Modal */
         .search-modal {
             display: none;
             position: fixed;
             inset: 0;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99999;
+            background-color: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
         .search-modal.is-open {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding-top: 10vh;
+            padding-top: 15vh;
         }
 
         .search-modal-content {
+            position: relative;
             background-color: #fff;
             border-radius: 12px;
             padding: 2rem;
             width: 90%;
-            max-width: 600px;
+            max-width: 550px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
@@ -570,28 +694,34 @@ function impexusone_customizer_css() {
             padding: 0.875rem 1rem;
             font-size: 1rem;
             border: 2px solid #e5e7eb;
-            border-radius: 8px;
+            border-radius: var(--customizer-search-radius);
             outline: none;
             transition: border-color 0.2s;
         }
 
         .search-modal-input:focus {
-            border-color: var(--customizer-cta-bg);
+            border-color: var(--customizer-search-btn-color);
         }
 
         .search-modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: -3rem;
+            right: 0;
             background: none;
             border: none;
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
             color: #fff;
             line-height: 1;
+            padding: 0.5rem;
+            transition: transform 0.2s;
         }
 
-        /* Header Search Dropdown */
+        .search-modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* Search Dropdown */
         .search-dropdown {
             display: none;
             position: absolute;
@@ -599,10 +729,11 @@ function impexusone_customizer_css() {
             right: 0;
             background: #fff;
             border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            min-width: 300px;
+            border-radius: var(--customizer-search-radius);
+            padding: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            min-width: 280px;
+            z-index: 1000;
         }
 
         .search-dropdown.is-open {
@@ -616,31 +747,69 @@ function impexusone_customizer_css() {
 
         .search-dropdown input {
             flex: 1;
-            padding: 0.5rem 0.75rem;
+            padding: 0.625rem 0.875rem;
             border: 1px solid #e5e7eb;
-            border-radius: 6px;
+            border-radius: var(--customizer-search-radius);
+            font-size: 0.875rem;
+        }
+
+        .search-dropdown button {
+            padding: 0.625rem 1rem;
+            background: var(--customizer-search-btn-color);
+            color: #fff;
+            border: none;
+            border-radius: var(--customizer-search-radius);
+            cursor: pointer;
+            font-size: 0.875rem;
+            white-space: nowrap;
         }
 
         /* Inline Search */
         .header-search-inline {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .header-search-inline {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .header-search-inline form {
             display: flex;
             align-items: center;
         }
 
         .header-search-inline input {
-            padding: 0.5rem 0.75rem;
+            padding: 0.5rem 0.875rem;
             border: 1px solid #e5e7eb;
-            border-radius: 6px 0 0 6px;
-            width: 180px;
+            border-radius: var(--customizer-search-radius) 0 0 var(--customizer-search-radius);
+            width: var(--customizer-search-inline-width);
+            font-size: 0.875rem;
+            height: 38px;
+            box-sizing: border-box;
+        }
+
+        .header-search-inline input:focus {
+            outline: none;
+            border-color: var(--customizer-search-btn-color);
         }
 
         .header-search-inline button {
             padding: 0.5rem 0.75rem;
-            background: var(--customizer-cta-bg);
+            background: var(--customizer-search-btn-color);
             color: #fff;
             border: none;
-            border-radius: 0 6px 6px 0;
+            border-radius: 0 var(--customizer-search-radius) var(--customizer-search-radius) 0;
             cursor: pointer;
+            height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-search-inline button .material-symbols-outlined {
+            font-size: 20px;
         }
 
         /* Mobile Search */
@@ -658,22 +827,25 @@ function impexusone_customizer_css() {
             flex: 1;
             padding: 0.75rem 1rem;
             border: 1px solid #e5e7eb;
-            border-radius: 8px;
+            border-radius: var(--customizer-search-radius);
             font-size: 1rem;
         }
 
         .mobile-search button {
-            padding: 0.75rem;
-            background: var(--customizer-cta-bg);
+            padding: 0.75rem 1rem;
+            background: var(--customizer-search-btn-color);
             color: #fff;
             border: none;
-            border-radius: 8px;
+            border-radius: var(--customizer-search-radius);
             cursor: pointer;
         }
 
-        /* Header position relative for dropdown */
+        /* Header Actions */
         .header-actions {
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
     </style>
     <?php
