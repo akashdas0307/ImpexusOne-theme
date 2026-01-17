@@ -5,6 +5,7 @@
  * @package ImpexusOne
  */
 ?>
+
 </main><!-- #main-content -->
 
 <footer class="site-footer" role="contentinfo">
@@ -14,18 +15,10 @@
             <div class="footer-newsletter-inner">
                 <div class="footer-newsletter-content">
                     <h3><?php esc_html_e('Stay Updated', 'impexusone'); ?></h3>
-                    <p><?php esc_html_e('Get the latest insights, RFP alerts, and development sector news delivered to your inbox.', 'impexusone'); ?></p>
+                    <p><?php esc_html_e('Get the latest RFP alerts and development insights delivered to your inbox.', 'impexusone'); ?></p>
                 </div>
-                
                 <form class="footer-newsletter-form" action="#" method="post">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        class="form-input" 
-                        placeholder="<?php esc_attr_e('Enter your email', 'impexusone'); ?>" 
-                        required
-                        aria-label="<?php esc_attr_e('Email address', 'impexusone'); ?>"
-                    >
+                    <input type="email" name="email" placeholder="<?php esc_attr_e('Enter your email', 'impexusone'); ?>" required>
                     <button type="submit" class="btn btn-primary">
                         <?php esc_html_e('Subscribe', 'impexusone'); ?>
                     </button>
@@ -38,31 +31,18 @@
     <div class="footer-main">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: About -->
+                <!-- About Column -->
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <?php if (has_custom_logo()) : ?>
-                            <?php 
-                            $custom_logo_id = get_theme_mod('custom_logo');
-                            $logo_url = wp_get_attachment_image_url($custom_logo_id, 'thumbnail');
-                            ?>
-                            <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" width="48" height="48">
-                        <?php else : ?>
-                            <div class="footer-logo-placeholder">
-                                <span class="material-symbols-outlined">business</span>
-                            </div>
-                        <?php endif; ?>
-                        
+                        <?php impexusone_site_logo(); ?>
                         <div class="footer-logo-text">
-                            <span class="footer-logo-name"><?php echo esc_html(strtoupper(get_bloginfo('name'))); ?></span>
-                            <span class="footer-logo-sub"><?php esc_html_e('Consultancy', 'impexusone'); ?></span>
+                            <span class="footer-logo-name"><?php bloginfo('name'); ?></span>
+                            <span class="footer-logo-sub"><?php esc_html_e('Consultancy LLP', 'impexusone'); ?></span>
                         </div>
                     </div>
-                    
                     <p class="footer-description">
-                        <?php esc_html_e('Empowering development organizations and CSR initiatives with evidence-based consulting, proposal support, and capacity building services.', 'impexusone'); ?>
+                        <?php esc_html_e('Elevating development impact through evidence-based consulting, research, and capacity building for CSR and social sector organizations.', 'impexusone'); ?>
                     </p>
-                    
                     <div class="footer-social">
                         <a href="https://linkedin.com/company/impexus" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="<?php esc_attr_e('LinkedIn', 'impexusone'); ?>">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -74,63 +54,49 @@
                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                             </svg>
                         </a>
-                        <a href="https://twitter.com/impexus" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="<?php esc_attr_e('Twitter', 'impexusone'); ?>">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Column 2: Services -->
-                <div class="footer-nav-section">
+                <!-- Services Column -->
+                <nav class="footer-nav-section" aria-label="<?php esc_attr_e('Services', 'impexusone'); ?>">
                     <h4><?php esc_html_e('Services', 'impexusone'); ?></h4>
-                    <ul class="footer-nav-links">
-                        <li><a href="<?php echo esc_url(home_url('/services/proposal-development/')); ?>" class="footer-nav-link"><?php esc_html_e('Proposal Development', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/services/me-systems/')); ?>" class="footer-nav-link"><?php esc_html_e('M&E Systems', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/services/capacity-building/')); ?>" class="footer-nav-link"><?php esc_html_e('Capacity Building', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/services/research-analytics/')); ?>" class="footer-nav-link"><?php esc_html_e('Research & Analytics', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/services/impact-assessment/')); ?>" class="footer-nav-link"><?php esc_html_e('Impact Assessment', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(home_url('/services/documentation/')); ?>" class="footer-nav-link"><?php esc_html_e('Documentation', 'impexusone'); ?></a></li>
-                    </ul>
-                </div>
+                    <div class="footer-nav-links">
+                        <a href="<?php echo esc_url(home_url('/services/proposal-development/')); ?>" class="footer-nav-link"><?php esc_html_e('Proposal Development', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(home_url('/services/me-systems/')); ?>" class="footer-nav-link"><?php esc_html_e('M&E Systems', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(home_url('/services/capacity-building/')); ?>" class="footer-nav-link"><?php esc_html_e('Capacity Building', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(home_url('/services/research-analytics/')); ?>" class="footer-nav-link"><?php esc_html_e('Research & Analytics', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(home_url('/services/impact-assessment/')); ?>" class="footer-nav-link"><?php esc_html_e('Impact Assessment', 'impexusone'); ?></a>
+                    </div>
+                </nav>
 
-                <!-- Column 3: Insights -->
-                <div class="footer-nav-section">
+                <!-- Insights Column -->
+                <nav class="footer-nav-section" aria-label="<?php esc_attr_e('Insights', 'impexusone'); ?>">
                     <h4><?php esc_html_e('Insights', 'impexusone'); ?></h4>
-                    <ul class="footer-nav-links">
-                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('rfp-alerts'))); ?>" class="footer-nav-link"><?php esc_html_e('RFP Alerts', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('tips-tricks'))); ?>" class="footer-nav-link"><?php esc_html_e('Tips & Tricks', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('tutorials'))); ?>" class="footer-nav-link"><?php esc_html_e('Tutorials', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('newsletter'))); ?>" class="footer-nav-link"><?php esc_html_e('Newsletter', 'impexusone'); ?></a></li>
-                        <li><a href="<?php echo esc_url(get_category_link(get_cat_ID('podcast'))); ?>" class="footer-nav-link"><?php esc_html_e('Podcast', 'impexusone'); ?></a></li>
-                    </ul>
-                </div>
+                    <div class="footer-nav-links">
+                        <a href="<?php echo esc_url(home_url('/insights/')); ?>" class="footer-nav-link"><?php esc_html_e('Insights Hub', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(get_category_link(get_cat_ID('rfp-alerts'))); ?>" class="footer-nav-link"><?php esc_html_e('RFP Alerts', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(get_category_link(get_cat_ID('newsletter'))); ?>" class="footer-nav-link"><?php esc_html_e('Newsletter', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(get_category_link(get_cat_ID('podcast'))); ?>" class="footer-nav-link"><?php esc_html_e('Podcast', 'impexusone'); ?></a>
+                        <a href="<?php echo esc_url(get_category_link(get_cat_ID('tutorials'))); ?>" class="footer-nav-link"><?php esc_html_e('Tutorials', 'impexusone'); ?></a>
+                    </div>
+                </nav>
 
-                <!-- Column 4: Contact -->
+                <!-- Contact Column -->
                 <div class="footer-nav-section">
                     <h4><?php esc_html_e('Contact', 'impexusone'); ?></h4>
-                    
                     <div class="footer-contact-item">
-                        <span class="material-symbols-outlined footer-contact-icon">location_on</span>
-                        <div class="footer-contact-text">
-                            <?php esc_html_e('Bhubaneswar, Odisha', 'impexusone'); ?><br>
-                            <?php esc_html_e('India 751024', 'impexusone'); ?>
-                        </div>
+                        <span class="footer-contact-icon material-symbols-outlined">location_on</span>
+                        <p class="footer-contact-text"><?php esc_html_e('Bhubaneswar, Odisha, India', 'impexusone'); ?></p>
                     </div>
-                    
                     <div class="footer-contact-item">
-                        <span class="material-symbols-outlined footer-contact-icon">mail</span>
-                        <div class="footer-contact-text">
-                            <a href="mailto:hello@impexus.com">hello@impexus.com</a>
-                        </div>
+                        <span class="footer-contact-icon material-symbols-outlined">mail</span>
+                        <p class="footer-contact-text">
+                            <a href="mailto:hello@impexus.co.in">hello@impexus.co.in</a>
+                        </p>
                     </div>
-                    
                     <div class="footer-contact-item">
-                        <span class="material-symbols-outlined footer-contact-icon">phone</span>
-                        <div class="footer-contact-text">
-                            <a href="tel:+919876543210">+91 98765 43210</a>
-                        </div>
+                        <span class="footer-contact-icon material-symbols-outlined">schedule</span>
+                        <p class="footer-contact-text"><?php esc_html_e('Mon - Fri: 9:00 AM - 6:00 PM IST', 'impexusone'); ?></p>
                     </div>
                 </div>
             </div>
@@ -141,10 +107,21 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-bottom-inner">
-                <?php impexusone_legal_nav(); ?>
-                
+                <nav class="footer-legal-links" aria-label="<?php esc_attr_e('Legal', 'impexusone'); ?>">
+                    <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="footer-legal-link"><?php esc_html_e('Privacy Policy', 'impexusone'); ?></a>
+                    <a href="<?php echo esc_url(home_url('/terms-of-service/')); ?>" class="footer-legal-link"><?php esc_html_e('Terms of Service', 'impexusone'); ?></a>
+                    <a href="<?php echo esc_url(home_url('/cookie-policy/')); ?>" class="footer-legal-link"><?php esc_html_e('Cookie Policy', 'impexusone'); ?></a>
+                    <a href="<?php echo esc_url(home_url('/sitemap/')); ?>" class="footer-legal-link"><?php esc_html_e('Sitemap', 'impexusone'); ?></a>
+                </nav>
                 <p class="footer-copyright">
-                    &copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?>. <?php esc_html_e('All rights reserved.', 'impexusone'); ?>
+                    <?php
+                    printf(
+                        /* translators: 1: Copyright year, 2: Site name */
+                        esc_html__('© %1$s %2$s. All rights reserved.', 'impexusone'),
+                        date('Y'),
+                        get_bloginfo('name')
+                    );
+                    ?>
                 </p>
             </div>
         </div>
