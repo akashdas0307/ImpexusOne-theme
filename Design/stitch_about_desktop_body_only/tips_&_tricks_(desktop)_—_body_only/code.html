@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tips &amp; Tricks - Impexus Consultancy</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2a6f41",
+                        "primary-dark": "#1e5230",
+                        "background-light": "#fbfaf9",
+                        "background-dark": "#292e32",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#363b40",
+                        "text-main": "#131614",
+                        "text-muted": "#6b8072",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(42, 111, 65, 0.08)",
+                        "card": "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for chips */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-background-light font-display antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-300">
+<div class="relative w-full min-h-screen">
+<!-- Main Layout Container -->
+<div class="max-w-[1400px] mx-auto px-4 md:px-8 py-8 md:py-12 flex flex-col lg:flex-row gap-10">
+<!-- Left Sidebar (Sticky) -->
+<aside class="w-full lg:w-80 shrink-0 order-2 lg:order-1">
+<div class="lg:sticky lg:top-8 flex flex-col gap-6">
+<!-- Subscribe Widget -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-soft border border-primary/5 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">mail</span>
+</div>
+<h3 class="text-xl font-bold mb-2 relative z-10">Stay ahead</h3>
+<p class="text-sm text-text-muted dark:text-gray-300 mb-4 relative z-10">Get the latest CSR frameworks and tips delivered to your inbox.</p>
+<form class="flex flex-col gap-3 relative z-10">
+<input class="w-full rounded-lg border-gray-200 bg-background-light dark:bg-background-dark dark:border-gray-600 dark:text-white text-sm px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Email address" type="email"/>
+<button class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-4 rounded-lg text-sm transition-colors flex items-center justify-center gap-2" type="button">
+                                Subscribe
+                            </button>
+</form>
+</div>
+<!-- Training CTA Widget -->
+<div class="bg-primary/5 dark:bg-primary/20 rounded-xl p-6 border border-primary/10">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-lg font-bold mb-2">Need guidance?</h3>
+<p class="text-sm text-text-muted dark:text-gray-300 mb-4">Our experts offer custom training for your CSR team.</p>
+<button class="text-primary dark:text-green-400 font-bold text-sm hover:underline flex items-center gap-1 group">
+                            Request a training
+                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Contact/Support Small Link -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-5 shadow-soft flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="Support Agent 1" class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark" data-alt="Portrait of a support agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMuljKzNfo69li6O_frSxWFtNBoIO0nHryWmnSNjVEZXDg2Q7JrCUmG16yloPQIu6JuDrY7DheV4THvidZegJOMR-I7VJEfI94p40wB4mbEmeyIZRO34w_eMb1HfxXM82BnR5nHT0CC19HIufjFGqARuF78FNzqygsV26Q4EHEuX94G2xMPUxouYU_XDf1BktVN5On0nTOYVV3SEuHN2PRjzfBSsTMrDU0L8wkMSHeZlAHC7mzE-FJusIA7ZzP46Z428hf4xabZkMZ"/>
+<img alt="Support Agent 2" class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark" data-alt="Portrait of a support agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlTO6X9xC9xUdy04WGHxVYR2eKEB8fWxLwGopn0ethjlRUMQCYJr8P78rwb_EVoD8EcMQ6B6U3T6yIcsH8JuzK8G5Gbu7UtyotBuYL3kODYJmqSxGDBwwRJbswsqHJq3txr8m4BLEjgKm5hQO4ubOUvIFHdFI-7A5PHe18casIqZlAZOLn2F5qXnRX9oOzmll02msr52xWwxTN6oI6xhvExBlT_xiOOq4c7CKi1K59Oo49FGUWMZ3CGdJqGo0OaG73cPTOvQbXH9M2"/>
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[10px] font-bold">+2</div>
+</div>
+<div class="text-xs">
+<p class="font-bold text-text-main dark:text-white">Questions?</p>
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Chat with us</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0 order-1 lg:order-2 flex flex-col gap-10">
+<!-- Hero Section -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-sm font-semibold text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+<span class="uppercase tracking-wider">Knowledge Hub</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-text-main dark:text-white leading-[1.1]">
+                        Tips &amp; Tricks
+                    </h1>
+<p class="text-lg md:text-xl text-text-muted dark:text-gray-300 max-w-2xl leading-relaxed">
+                        Practical guides, actionable insights, and field-tested strategies for modern CSR implementation.
+                    </p>
+</div>
+<!-- Start Here Section -->
+<section>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">flag</span>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Start here</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group cursor-pointer bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+<div class="h-40 w-full bg-cover bg-center relative overflow-hidden" data-alt="Two professionals discussing a document over a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAebAqf9h3CsIUArdbiewESf5utjgsr-m9kI3fIrr2SVynJDUOzD-FTtA8eAZ5rxhwBxdRst4B8qUQUTTm-GplR6IaOFqCtysqlRT0D44I-wP5tFERd8fhhovsHOo9ArVR5NnkWZIjk7K9Xrj_kpq9tZQmqtETOfpNzTUGOXPklzIueRtw344FzA3CSoXv-eXgekVF-lk6tvCrEz7mDspFTsrvYbM-cWeodGC7syVsA2SmvFh4Q0LqZi06CdNlLYtpxBTLUnBEIuFSN')">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors"></div>
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold shadow-sm">Essential</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">Understanding New CSR Law</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 mb-4 line-clamp-2">Key compliance updates for the 2024 fiscal year you cannot miss.</p>
+<div class="mt-auto flex items-center gap-2 text-xs font-medium text-primary">
+<span>Read Guide</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+<div class="h-40 w-full bg-cover bg-center relative overflow-hidden" data-alt="Close up of a person writing in a notebook with a pen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbmhzirS3iJnro4Xwu5eamlhVpvV7L8a4W7wLKt88MG1unm2dBuEMFHf9QfLNS9dXvuynWSQ8rtc0mXZE3MwPJP_wO7HwoH8x9o29AUqDj_nBDc9KjHloJztvHsb3pgqCDQQWLUAJD4C4vEN5KHMgYNAjeO29Lp5fa_Ne1WxFu5yV3iadef8WP7O8PVs1_ZN-qLwKSnKPtJ14zKDKPIXzSTzNkwjQTCVYJW2fe8rKVSwN8ClkEHWmH9vde1-9ZRULPKsI6CMqo7nUz')">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors"></div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">Drafting Impact Reports</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 mb-4 line-clamp-2">A step-by-step structural guide for beginners and pros alike.</p>
+<div class="mt-auto flex items-center gap-2 text-xs font-medium text-primary">
+<span>Read Guide</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 flex flex-col border border-gray-100 dark:border-gray-700">
+<div class="h-40 w-full bg-cover bg-center relative overflow-hidden" data-alt="A clean modern meeting room with glass walls" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4LCcQKApS22rk_QlW4LxxlZMeDzsHh2p3lRS_48nlBM4VzreJmLIPDpcWVcTJI8Ldx84DgVJcu97jdbBIf1e4arTQGPBeOp6pgiInIReasvWrOBTOVl13nFbuV1Xg5UkqdMFy-0jPlZv95-2sNb-o3uyTNHUA4dVTVRqlN5j_teHigKqEmTlQJkmht3qrI4dojrkSvPsBM2FBVyWZqBXPcn0fPbuyv-aKgxwVbNJbbwISAT1pIiMWDDYIxkOAyqXncErC-5C2xDGF')">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors"></div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">Budgeting for Social Audits</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 mb-4 line-clamp-2">Maximize efficiency and reduce overhead in your social audits.</p>
+<div class="mt-auto flex items-center gap-2 text-xs font-medium text-primary">
+<span>Read Guide</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Grid Section -->
+<section class="flex flex-col gap-6">
+<!-- Filters Sticky on Mobile, static on desktop usually but let's make it nice -->
+<div class="sticky top-0 lg:static z-20 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm -mx-4 px-4 lg:mx-0 lg:px-0 border-b border-gray-200 dark:border-gray-700 lg:border-none">
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="shrink-0 h-9 px-5 rounded-full bg-primary text-white text-sm font-medium transition-transform hover:scale-105 shadow-md shadow-primary/20">All Topics</button>
+<button class="shrink-0 h-9 px-5 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 text-text-main dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:border-primary/30">CSR Policy</button>
+<button class="shrink-0 h-9 px-5 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 text-text-main dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:border-primary/30">Fieldwork</button>
+<button class="shrink-0 h-9 px-5 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 text-text-main dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:border-primary/30">Reporting</button>
+<button class="shrink-0 h-9 px-5 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 text-text-main dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:border-primary/30">HR Strategy</button>
+<button class="shrink-0 h-9 px-5 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 text-text-main dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all hover:border-primary/30">Community</button>
+</div>
+</div>
+<!-- Main Article Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Article Card 1 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/3] w-full rounded-xl bg-gray-100 dark:bg-gray-800 overflow-hidden relative mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Group of diverse people joining hands in a circle outdoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-F9x50I9HGZIH4ctQffb-WJMGFQwRXDrY1LK2eb05ubotte_ZB7iwjypmakhQCOIDKq-bDMn-jbYoMZNhQDzymus69a05jogFiaU7mcq6B114JSTHvEeU-XJzuBQ88Qs52FCk1M9DoVZIpeGkd0ca4qPxPkmRt2QWOwC1HhtxuNnxB8AYCQp-pj749k5-0APH6BqibVL-aKYcfER9VaKAR3V2A8QeYDod3hUGKGVzKvy6l-Tm0n4YCW-XfxSfg5ecbaQxdt2p6k5e')"></div>
+<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 5 min
+                                </div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Community</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors">Stakeholder Engagement</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 line-clamp-2 leading-relaxed">Building trust with local communities starts with listening first. Here are 5 techniques we use.</p>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/3] w-full rounded-xl bg-gray-100 dark:bg-gray-800 overflow-hidden relative mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Data analytics dashboard displayed on a laptop screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwJTXkG1cP9U1P1QdrFVKhVRE6T3GNe3PO5UXAAO-9Wv387Fqc7SG2SHBRXNNKpFxQ3r_-I9LQuzjBl5PV7elb4ICXstKRXaBU-iitqXDNd-zzKAh5A55iTpxRHZwXvvLkeZkVrkSUh5Q4VGZuRHHrcVot_zezfO8OUUfyna81hmDweIgMMT247QtP0y88RXPTP5AFBFG8Zwp0p6Z53I8FAaAYUeaCBhamQMDZ0J-Y_DspKoV_EdUrcMB24dER9IIr1elYHZVdwWQe')"></div>
+<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 3 min
+                                </div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Data</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors">Data Collection 101</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 line-clamp-2 leading-relaxed">Tools and techniques for accuracy in the field when connectivity is low.</p>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/3] w-full rounded-xl bg-gray-100 dark:bg-gray-800 overflow-hidden relative mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Two people discussing a document in an office setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYieTg9E6tq-UJNVQyyff_4dvvdTtKytKBi_UBNA6_cctiGCHXAFZ5e3XFmxLb2_6oD4MuVf09P5c8iHlkvEAIbqltQcVsfs1ENPfHPE8tsb2t1exb5tW2WWcykszRze9VYL-n4HJInCssjR59Dt0Y_hvNYV2EB4jQVLYn0ViHFxSxeJeRBTo9n6W_Y3ZIKyrjyzHnJNY79CD4PTji6BXwmKMZqgFJhjUFJTIgB0ecV0Hvb64uOSpw9yeyV39nL8BZx2s4WJ93c7zB')"></div>
+<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 4 min
+                                </div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Ethics</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors">Ethical Field Practices</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 line-clamp-2 leading-relaxed">Ensuring dignity and consent in all development work is non-negotiable.</p>
+</div>
+</article>
+<!-- Article Card 4 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/3] w-full rounded-xl bg-gray-100 dark:bg-gray-800 overflow-hidden relative mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A person writing in a notebook on a rustic wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBA1FBBuPA8zIckhlX_rXKNFVceQKYMRPNu7EzffyW9wbIv_EaniSfVAAANb64R4mciiVkEHp5VU0BOUAudzPDcDOi5Vk0orPCYCw06LxW_Ng0sNLV6_zo2ZRtN6TzuxfyFce6xbNTmGzTtYCRr8i0tL4t43rd2IemhdcJzXIAbw8v5PkKQChTjBUkR1HdSD60uxoP_dBjg-orI3rHabr8DDzBBQcDF1LMRVu8yQqkPOBfb1NlABVUGLFHR7A_KJ3inUXyJg4MGjJgE')"></div>
+<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 6 min
+                                </div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Reporting</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors">Writing Case Studies</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 line-clamp-2 leading-relaxed">Storytelling for social impact: How to highlight individual stories without exploiting.</p>
+</div>
+</article>
+<!-- Article Card 5 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/3] w-full rounded-xl bg-gray-100 dark:bg-gray-800 overflow-hidden relative mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Volunteers planting trees in a field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQA8f4_EgvGtxP6skVNhifjQpRAt_Jlsu5XCzIMPf9NhOHthFf7IuYTmVlfNbe7-lEdcvSl0QCF6n366gB3Hrbgy4u51m_0ghLE5jJhoX5EipzSvGbaH-HtJ-IAA1iFD5NoQpMk7YljnAUIvRsAn8IwKJpjyk_LDZWZ20PJSLhJkLYZeK3qw6x2jkI1701sBzDeIKcPhzQCblyyiixVtGHoLaTbd1MIxV4fgpEdejTM_iPguDsLafNGCYWGtwdri-CjTHC6744jJm4')"></div>
+<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 3 min
+                                </div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">HR</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors">Volunteer Management</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 line-clamp-2 leading-relaxed">Recruiting and retaining talent for short-term and long-term projects.</p>
+</div>
+</article>
+<!-- Article Card 6 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-[4/3] w-full rounded-xl bg-gray-100 dark:bg-gray-800 overflow-hidden relative mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract view of network connections on a dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDf8yjNL-TkdBl8V5z10_aaVTJiE4rNl1nl9iqDnIOVFr5Tbkb4ZzX20I21LZZQlwfvFrI1yH86wb86R-5GfEETfoVsWFx_O12LeqZcCL8K0hhAToncayad9fA4YiaNYmeahL0U783u6f5quWQl2kA-B9_UX8iseGQcZ4QGZf7xQgqtCoxh0yx7D8x7-8pPrjC10nAqk2HOtsyh3AedSLHiEBkKa3dG2FJRiqa2Y5EEjyNbPT6ZzhwtubgSUtZpTMlgLcUiLUTmvzZ1')"></div>
+<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 7 min
+                                </div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Tech</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors">Remote Monitoring</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 line-clamp-2 leading-relaxed">Leveraging satellite data and mobile apps for distant project sites.</p>
+</div>
+</article>
+</div>
+<!-- Pagination Load More -->
+<div class="flex justify-center mt-6">
+<button class="px-6 py-2 rounded-lg text-sm font-semibold text-text-main dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                            Load more tips
+                        </button>
+</div>
+</section>
+<!-- Checklists Section -->
+<section class="mt-8">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">checklist</span>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Most useful checklists</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Checklist Item 1 -->
+<div class="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 rounded-xl p-4 flex items-start gap-4 hover:border-primary/40 transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">assignment</span>
+</div>
+<div class="flex-1">
+<h4 class="text-base font-bold text-text-main dark:text-white mb-1">Pre-audit Checklist</h4>
+<p class="text-xs text-text-muted dark:text-gray-400 mb-2">Ensure you have all documents ready before the auditor arrives.</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary flex items-center gap-1">
+                                    Download PDF <span class="material-symbols-outlined text-[12px]">download</span>
+</span>
+</div>
+</div>
+<!-- Checklist Item 2 -->
+<div class="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 rounded-xl p-4 flex items-start gap-4 hover:border-primary/40 transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div class="flex-1">
+<h4 class="text-base font-bold text-text-main dark:text-white mb-1">Stakeholder Meeting Agenda</h4>
+<p class="text-xs text-text-muted dark:text-gray-400 mb-2">A template for productive community town halls.</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary flex items-center gap-1">
+                                    Download DOCX <span class="material-symbols-outlined text-[12px]">download</span>
+</span>
+</div>
+</div>
+<!-- Checklist Item 3 -->
+<div class="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 rounded-xl p-4 flex items-start gap-4 hover:border-primary/40 transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div class="flex-1">
+<h4 class="text-base font-bold text-text-main dark:text-white mb-1">Field Safety Protocol</h4>
+<p class="text-xs text-text-muted dark:text-gray-400 mb-2">Essential safety checks for remote field visits.</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary flex items-center gap-1">
+                                    Download PDF <span class="material-symbols-outlined text-[12px]">download</span>
+</span>
+</div>
+</div>
+<!-- Checklist Item 4 -->
+<div class="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 rounded-xl p-4 flex items-start gap-4 hover:border-primary/40 transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</div>
+<div class="flex-1">
+<h4 class="text-base font-bold text-text-main dark:text-white mb-1">Donor Report Template</h4>
+<p class="text-xs text-text-muted dark:text-gray-400 mb-2">Standardized format for quarterly donor updates.</p>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary flex items-center gap-1">
+                                    Download XLSX <span class="material-symbols-outlined text-[12px]">download</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<div class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8 flex items-center justify-between text-sm text-text-muted">
+<span>© 2024 Impexus Consultancy LLP</span>
+<a class="hover:text-primary" href="#">Back to top</a>
+</div>
+</main>
+</div>
+</div>
+<!-- Optional subtle background texture pattern overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+</body></html>

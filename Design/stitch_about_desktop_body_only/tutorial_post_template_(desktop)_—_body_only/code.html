@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tutorial Post Template</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#317a1f",
+                        "primary-dark": "#256017",
+                        "accent": "#C49A5F",
+                        "background-light": "#f7f8f8",
+                        "background-dark": "#18181b",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#27272a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                        "glow": "0 0 15px rgba(49, 122, 31, 0.2)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #3f3f46;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col">
+<!-- Main Container -->
+<main class="flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-8 lg:py-12">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 mb-8 text-sm items-center">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="text-slate-300 dark:text-slate-600">/</span>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors font-medium" href="#">Resources</a>
+<span class="text-slate-300 dark:text-slate-600">/</span>
+<span class="text-primary font-bold">Tutorials</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16">
+<!-- LEFT SIDEBAR (Sticky) -->
+<aside class="hidden lg:block lg:col-span-3 xl:col-span-3">
+<div class="sticky top-8 space-y-8">
+<!-- Support CTA (Sidebar) -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800 p-5 shadow-soft group hover:border-primary/30 transition-all duration-300">
+<div class="flex items-start justify-between mb-3">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight">Need help with this?</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Our implementation team is standing by to assist with setup.</p>
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-4 rounded-lg transition-colors shadow-glow">
+<span>Request Support</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<!-- Table of Contents -->
+<div class="pl-2">
+<h4 class="uppercase tracking-wider text-xs font-bold text-slate-400 dark:text-slate-500 mb-4">Tutorial Contents</h4>
+<nav class="flex flex-col space-y-0 relative">
+<!-- Track line -->
+<div class="absolute left-0 top-2 bottom-2 w-px bg-slate-200 dark:bg-slate-700"></div>
+<!-- Links -->
+<a class="group flex items-center gap-3 py-2 pl-4 border-l-2 border-primary -ml-[1px] text-sm font-bold text-primary" href="#intro">
+                                Introduction
+                            </a>
+<a class="group flex items-center gap-3 py-2 pl-4 border-l-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 -ml-[1px] text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#prerequisites">
+                                Prerequisites
+                            </a>
+<a class="group flex items-center gap-3 py-2 pl-4 border-l-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 -ml-[1px] text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#step1">
+                                1. Environment Setup
+                            </a>
+<a class="group flex items-center gap-3 py-2 pl-4 border-l-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 -ml-[1px] text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#step2">
+                                2. Configuration
+                            </a>
+<a class="group flex items-center gap-3 py-2 pl-4 border-l-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 -ml-[1px] text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#resources">
+                                Resources
+                            </a>
+<a class="group flex items-center gap-3 py-2 pl-4 border-l-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 -ml-[1px] text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#troubleshooting">
+                                Troubleshooting
+                            </a>
+</nav>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT -->
+<article class="col-span-1 lg:col-span-9 xl:col-span-8 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft p-6 md:p-10 lg:p-12 border border-slate-100 dark:border-slate-800">
+<!-- Header Zone -->
+<header class="mb-10 border-b border-slate-100 dark:border-slate-800 pb-10">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide mb-6">
+<span class="material-symbols-outlined text-sm">school</span>
+                        Tutorial
+                    </div>
+<h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight tracking-tight mb-6">
+                        How to Optimize Your Workflow with Impexus Tools
+                    </h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-3xl">
+                        A comprehensive guide to setting up your environment for maximum efficiency using the latest Impexus toolkit updates.
+                    </p>
+<!-- Meta Row -->
+<div class="flex flex-wrap items-center gap-6 text-sm">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Portrait of the author Jane Doe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjRdz5gohx82cHKHfPBgVqDRzkgPIcti4e195I71pkeIvFdkXyA5yEZDgKuTk89LCXeW364TDsSUasOalPlGrAYU09uQLqzvilb5Xo8CINef4tCmOuivaHQKdgpVjjIoPyyPdQWhy2-_glT_GP0ouba53sJy5gHOwF54THLJvvB4zjQVM720DDJlV5eT1xpM5a-N2bXohCtBnlNZQkNy1w34nNTGHFmqMcbrgQwWg1BYpu7PQMj8WYIJWx-eEGTwlEt4cPptJCnntu');"></div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Jane Doe</p>
+<p class="text-slate-500 dark:text-slate-400">Senior Engineer</p>
+</div>
+</div>
+<div class="hidden sm:block w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Updated Oct 24, 2023</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>15 min read</span>
+</div>
+</div>
+</header>
+<!-- What you'll learn Box -->
+<div class="mb-12 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 overflow-hidden">
+<div class="bg-primary/5 dark:bg-primary/10 px-6 py-4 border-b border-primary/10 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<h3 class="font-bold text-primary text-lg">What you'll learn</h3>
+</div>
+<div class="p-6 md:p-8">
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 shrink-0">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300 leading-relaxed">How to configure the base Impexus environment variables for local development.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 shrink-0">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300 leading-relaxed">Best practices for utilizing the new CI/CD pipeline integrations.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 shrink-0">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300 leading-relaxed">Troubleshooting common authentication handshake errors.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Prerequisites Chips -->
+<div class="mb-12" id="prerequisites">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Prerequisites</h3>
+<div class="flex flex-wrap gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium">
+<span class="material-symbols-outlined text-base">terminal</span>
+                            CLI Knowledge
+                        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+                            Admin Access
+                        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium">
+<span class="material-symbols-outlined text-base">code</span>
+                            Node.js v18+
+                        </span>
+</div>
+</div>
+<!-- Content Body -->
+<div class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-li:text-slate-600 dark:prose-li:text-slate-300">
+<!-- Step 1 -->
+<div class="group relative pl-0 md:pl-16 mb-16" id="step1">
+<div class="hidden md:flex absolute left-0 top-0 h-12 w-12 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xl group-hover:bg-primary group-hover:text-white transition-colors">
+                            1
+                        </div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+<span class="md:hidden flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white text-sm">1</span>
+                            Environment Setup
+                        </h2>
+<p class="mb-6">
+                            Before we dive into the code, we need to ensure your local machine matches the production environment. Open your terminal and run the following command to check your current version.
+                        </p>
+<div class="bg-slate-900 rounded-lg p-4 overflow-x-auto mb-6 shadow-lg border border-slate-700">
+<div class="flex gap-1.5 mb-3">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+</div>
+<code class="text-sm font-mono text-emerald-400">
+                                $ impexus --version<br/>
+                                &gt; v2.4.0-stable
+                            </code>
+</div>
+<div class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-accent p-4 rounded-r-lg">
+<p class="text-amber-900 dark:text-amber-100 text-sm m-0 font-medium">
+<span class="font-bold block mb-1">Pro Tip</span>
+                                If you are running an older version, the migration script in Step 3 will fail. Upgrade now to avoid headaches later.
+                            </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group relative pl-0 md:pl-16 mb-16" id="step2">
+<div class="hidden md:flex absolute left-0 top-0 h-12 w-12 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xl group-hover:bg-primary group-hover:text-white transition-colors">
+                            2
+                        </div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+<span class="md:hidden flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white text-sm">2</span>
+                            Configuration &amp; Integration
+                        </h2>
+<p class="mb-6">
+                            Now that the CLI is installed, we need to configure the YAML file. Watch the video below for a detailed walkthrough of the parameters.
+                        </p>
+<!-- Video Embed Block -->
+<div class="rounded-xl overflow-hidden bg-black shadow-lg mb-4 aspect-video relative group/video cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover/video:opacity-40 transition-opacity" data-alt="Code editor on a screen with blurred background code" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3dRSGDDbwsYy5CyP2oXYQSJ9FBUDqSGEU1PiJ_N0Ep2YOF5kUb4wW6xwGbyLFCiYI3mY_3jaxK8q1BLKPMPu4YDpoJYBlQmXWemoZMiNe8tkR46xYf7-kZXmfpkkMGDNKeH7DTlyXSLOBYei2uRPyZIBMQKSyEYCujRa43USxmxjHr7F-QeOm4m0F-TimSpMdDLQmmp6oVaKNzs8ECcnrQ8nHbNoOWzEAzPvo8mHwOOXUFufMmpQlZYG6msyWZxCWg4meyr3dKM9-');"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="h-16 w-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300">
+<div class="h-12 w-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<span class="bg-black/70 text-white text-xs px-2 py-1 rounded font-medium backdrop-blur-md">04:23</span>
+</div>
+</div>
+<p class="text-sm text-center text-slate-500 italic mt-2 mb-8">
+                            Video: configuring config.yaml for secure environments.
+                        </p>
+</div>
+<!-- Resources Section -->
+<div class="group relative pl-0 md:pl-16 mb-16" id="resources">
+<div class="hidden md:flex absolute left-0 top-0 h-12 w-12 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xl group-hover:bg-primary group-hover:text-white transition-colors">
+                            3
+                        </div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+<span class="md:hidden flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white text-sm">3</span>
+                            Resources &amp; Downloads
+                        </h2>
+<!-- Download Card -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4 mb-4 sm:mb-0">
+<div class="h-12 w-12 rounded-lg bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-primary">
+<span class="material-symbols-outlined text-2xl">folder_zip</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white leading-tight">Project Config Files</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">ZIP Archive • 2.4 MB</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-sm flex items-center gap-2 transition-all w-full sm:w-auto justify-center">
+<span>Download</span>
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+</div>
+<!-- Troubleshooting -->
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800" id="troubleshooting">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Troubleshooting</h2>
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<details class="group bg-white dark:bg-slate-800/30 rounded-lg border border-slate-200 dark:border-slate-700 open:border-primary/40 open:ring-1 open:ring-primary/10 transition-all">
+<summary class="flex items-center justify-between cursor-pointer p-4 font-bold text-slate-800 dark:text-slate-200 select-none">
+<span>Error: "Permission Denied (publickey)"</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                                    This usually happens when your SSH agent isn't forwarding the correct key. Try running <code class="bg-slate-100 dark:bg-slate-900 px-1 py-0.5 rounded text-sm font-mono text-pink-600">ssh-add -K ~/.ssh/id_rsa</code> and restart your terminal.
+                                </div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group bg-white dark:bg-slate-800/30 rounded-lg border border-slate-200 dark:border-slate-700 open:border-primary/40 open:ring-1 open:ring-primary/10 transition-all">
+<summary class="flex items-center justify-between cursor-pointer p-4 font-bold text-slate-800 dark:text-slate-200 select-none">
+<span>Webpack fails to compile</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                                    Ensure that you have installed the peer dependencies listed in the <code class="bg-slate-100 dark:bg-slate-900 px-1 py-0.5 rounded text-sm font-mono">package.json</code> manually if you are using npm version 6 or below.
+                                </div>
+</details>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Bottom Related Band -->
+<section class="mt-16 lg:mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Related Tutorials</h3>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                    View all <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Related Card 1 -->
+<a class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-soft transition-all hover:-translate-y-1" href="#">
+<div class="h-40 bg-cover bg-center" data-alt="Computer screen showing code snippet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDf09ma2iHVJgCPUxANWjOChD8H_sZ-EbsLwsw-tQRX3TG1wukL6DocA2a-Umoc2V7cKFB1hwO0NxdQMY9j_UZ1mtYq3uT8ANq0ND4SL7ZQYk1asCgMeV-vqKs5LypI7GVAEOHGdxH4qSe-7rrxisC42-Kbev3LZbs6OnwazxKseyiF_A-QuoU0M3-WGl7I0gAmtBbu78lfmTLQ1FMylu7smyVtCvJHsPFKvd1h09ZtfOTrX-NRcpvz4AJORyOhCLrCmEhmdOXVVsmo');"></div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="text-xs font-bold text-primary mb-2 uppercase tracking-wide">Development</div>
+<h4 class="font-bold text-slate-900 dark:text-white text-lg mb-2 group-hover:text-primary transition-colors">Advanced CLI Techniques</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-auto">Take your terminal skills to the next level with these 10 advanced commands.</p>
+</div>
+</a>
+<!-- Related Card 2 -->
+<a class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-soft transition-all hover:-translate-y-1" href="#">
+<div class="h-40 bg-cover bg-center" data-alt="Data analytics dashboard charts" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcOxkCZ-kBrrFb62V91T2lmv9K0UbRzCFqkiENSJYQHqgSyh9pCI3rEqpv8FcI6vtaTNsNaO49hLlxAJdEjs-bt5GRP9CTGam-9ragGcKUHyELuSqnHNLW1OWOccq8xvYT2OovyoS-MRK0tlG1NX6qhGUMhv1_qqrLQpfa--2ckzceTbQ2W9GyxpPRyulJuwiqj_WgAOTLItxCZXB2vrGFswlNFoLgXa-yujFFj-dMoiIVywE2_Re35k7RWdZhayw7_biIOYEG6LKA');"></div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="text-xs font-bold text-primary mb-2 uppercase tracking-wide">Data</div>
+<h4 class="font-bold text-slate-900 dark:text-white text-lg mb-2 group-hover:text-primary transition-colors">Data Visualization 101</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-auto">Learn how to turn complex datasets into understandable charts.</p>
+</div>
+</a>
+<!-- Related Card 3 -->
+<a class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-soft transition-all hover:-translate-y-1" href="#">
+<div class="h-40 bg-cover bg-center" data-alt="Cybersecurity lock symbol digital" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSzluh2KB5NcRLHhrgHqjpWgq59pY4zrzwzhM1uzsE_21BpuWM3NtfJlx0CGcNGgv7KeMIzKW_4R7SOkDn9GDroDUE3ib2WiGZ3slXA3zuY5PuZKNPEVYPlNfhUrsDf4etzzNnkNWOPg6_uAvsVaNBAk7SN5hZ7GZveSjF7tsMmlQqqUQYcZREoBy2in69DegPG-tTFyJEnymPamNpAnTJQ-YBjs5jscl1PKidrepsnY2VI-AcC_7b2m3rol_rVcaMo0Qov0EWKYTz');"></div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="text-xs font-bold text-primary mb-2 uppercase tracking-wide">Security</div>
+<h4 class="font-bold text-slate-900 dark:text-white text-lg mb-2 group-hover:text-primary transition-colors">Securing Your Endpoint</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mt-auto">Essential security protocols every Impexus admin should implement.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+</body></html>

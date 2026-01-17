@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Impexus Podcast</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#512659",
+                        "primary-hover": "#6a3275",
+                        "background-light": "#f6f5f4",
+                        "background-dark": "#141216",
+                        "surface-dark": "#1e1b21", // Slightly lighter than background
+                        "surface-highlight": "#2a262e",
+                        "accent-sage": "#658270", // Sage green for tags
+                        "text-muted": "#b0a4b2",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141216; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a262e; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #512659; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased font-body selection:bg-primary selection:text-white min-h-screen flex flex-col">
+<!-- Main Layout Container -->
+<div class="layout-container flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+<!-- Header / Hero Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-surface-highlight pb-8">
+<div class="flex flex-col gap-2 max-w-2xl">
+<p class="text-primary font-bold tracking-widest text-sm uppercase mb-1">Impexus Consultancy LLP</p>
+<h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+                    The Impexus Podcast
+                </h1>
+<p class="text-text-muted text-lg md:text-xl font-normal leading-relaxed mt-2 max-w-lg">
+                    Conversations on Development &amp; Impact. Exploring the intersection of policy, CSR, and human stories.
+                </p>
+</div>
+<div class="flex flex-col items-start md:items-end gap-4 shrink-0">
+<button class="group flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover transition-all duration-300 text-white px-6 py-3 rounded-xl font-bold font-display tracking-wide shadow-[0_4px_20px_rgba(81,38,89,0.3)] hover:shadow-[0_6px_25px_rgba(81,38,89,0.5)] active:scale-95" onclick="document.getElementById('guest-form').scrollIntoView({behavior: 'smooth'})">
+<span>Suggest a Guest</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="font-size: 20px;">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Platform Strip -->
+<section aria-label="Listen on" class="mb-12">
+<div class="flex flex-wrap items-center gap-4 text-text-muted text-sm font-medium">
+<span class="uppercase tracking-widest text-xs opacity-60 mr-2">Listen on</span>
+<a class="flex items-center gap-2 bg-surface-dark hover:bg-surface-highlight border border-white/5 hover:border-white/10 px-4 py-2 rounded-full transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-red-500 transition-colors" style="font-size: 20px;">play_circle</span>
+<span class="text-white group-hover:text-white/90">YouTube</span>
+</a>
+<a class="flex items-center gap-2 bg-surface-dark hover:bg-surface-highlight border border-white/5 hover:border-white/10 px-4 py-2 rounded-full transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-green-500 transition-colors" style="font-size: 20px;">graphic_eq</span>
+<span class="text-white group-hover:text-white/90">Spotify</span>
+</a>
+<a class="flex items-center gap-2 bg-surface-dark hover:bg-surface-highlight border border-white/5 hover:border-white/10 px-4 py-2 rounded-full transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-purple-400 transition-colors" style="font-size: 20px;">podcasts</span>
+<span class="text-white group-hover:text-white/90">Apple Podcasts</span>
+</a>
+<a class="flex items-center gap-2 bg-surface-dark hover:bg-surface-highlight border border-white/5 hover:border-white/10 px-4 py-2 rounded-full transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-orange-400 transition-colors" style="font-size: 20px;">rss_feed</span>
+<span class="text-white group-hover:text-white/90">RSS</span>
+</a>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Content (8 cols) -->
+<main class="lg:col-span-8 flex flex-col gap-10">
+<!-- Featured Episode Card -->
+<section aria-labelledby="featured-episode">
+<h2 class="sr-only" id="featured-episode">Featured Episode</h2>
+<div class="group relative overflow-hidden rounded-2xl bg-surface-dark border border-white/5 shadow-xl transition-all hover:shadow-2xl hover:shadow-primary/10">
+<div class="flex flex-col md:flex-row">
+<!-- Image -->
+<div class="w-full md:w-2/5 aspect-video md:aspect-auto relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0" data-alt="Close up of a microphone in a dark studio setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_grYaovwcQ1_hgnqjcSo1O5AeXdbStmgoYpnjcDWh-YXhSrlgiGvophcrUFzWyv87Eti54RrGAdjoXtiWyaCJdIOha8Gmt6nlhnKN_p59QndERgemUEfpQWl5_TUpBYPxTjj01qICe0zzQvBdPbGoQSeQvkyz2TFmmfH-jCrXeBr1SU5vRP_pYqC0P5ao2BSsRuGKt2MxdIBwmWYHtp3BJzWpQVPVoid3lpDeeStMgnBApEcGgNvPeah_J2SeZ4fweXN6mHw3RTMW');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark/90 md:bg-gradient-to-r md:from-transparent md:to-surface-dark/50 mix-blend-multiply"></div>
+<div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                    Latest Episode
+                                </div>
+</div>
+<!-- Content -->
+<div class="flex-1 p-6 md:p-8 flex flex-col justify-center relative">
+<div class="flex items-center gap-3 text-xs font-medium text-accent-sage mb-3">
+<span class="bg-accent-sage/10 px-2 py-1 rounded-md">Supply Chain</span>
+<span class="text-text-muted">•</span>
+<span class="text-text-muted">45 min listen</span>
+</div>
+<h3 class="font-display text-2xl md:text-3xl font-bold text-white leading-tight mb-2 group-hover:text-purple-100 transition-colors">
+                                    Ep 42: Sustainable Supply Chains
+                                </h3>
+<p class="text-text-muted text-base line-clamp-2 mb-6 font-light">
+                                    Dr. Aris Thorne discusses the complexities of ethical sourcing in global markets and how modern logistics can reduce carbon footprints without sacrificing efficiency.
+                                </p>
+<div class="flex items-center gap-4 mt-auto">
+<button class="flex items-center gap-3 bg-white text-background-dark hover:bg-gray-100 px-5 py-2.5 rounded-lg font-bold text-sm transition-transform active:scale-95 shadow-lg shadow-white/5">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                        Play Episode
+                                    </button>
+<button class="flex items-center justify-center size-10 rounded-full border border-white/10 hover:bg-white/5 text-text-muted hover:text-white transition-colors" title="Save for later">
+<span class="material-symbols-outlined" style="font-size: 20px;">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Episode List -->
+<section aria-labelledby="recent-episodes" class="flex flex-col gap-4">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="font-display text-xl font-bold text-white" id="recent-episodes">Recent Episodes</h2>
+<a class="text-sm text-primary hover:text-primary-hover font-medium transition-colors" href="#">View Archive</a>
+</div>
+<!-- List Item 1 -->
+<article class="group relative flex flex-col sm:flex-row gap-4 p-4 rounded-xl bg-surface-dark border border-white/5 hover:bg-surface-highlight transition-all hover:border-white/10">
+<div class="shrink-0 relative">
+<div class="size-20 sm:size-24 rounded-lg bg-cover bg-center shadow-md grayscale-[30%] group-hover:grayscale-0 transition-all" data-alt="Business meeting in a modern glass office discussing finance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSxdCmE-Q4EfNSxHd_MyyWIzsMmYYObBtXCRtmGN6aixjXhYvfABvd91OcxXknpb_eP2jyLIjCfvP7zHwuftpRsiHBKA2bgzHfMMRCH12n2mXcMPk3yLk286DK0TxHI1ImXEPozTGy7-pydBUZGECFKo2SNAS5Ah6ySVGENQ4dEHvTu1ek2Vo2ySsCOi_CClovnS-T2qJ5rFDJXSUvoqredI4fy80uw4uEjjzeAyUOXI_UsBxxqHueIPQk_aZ4YKxaZta5mceb8sQa');"></div>
+<button class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+<span class="material-symbols-outlined text-white text-3xl drop-shadow-md filled" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="text-xs font-bold text-white/40">EP 41</span>
+<span class="text-[10px] uppercase tracking-wider font-bold text-emerald-200 bg-emerald-900/30 px-2 py-0.5 rounded border border-emerald-800/50">Finance</span>
+</div>
+<h3 class="text-lg font-bold text-white font-display leading-tight group-hover:text-primary-hover transition-colors">
+                                The Future of CSR Funding
+                            </h3>
+<p class="text-sm text-text-muted line-clamp-1">Exploring how corporate responsibility budgets are shifting post-pandemic with Sarah Jenkins.</p>
+<div class="flex items-center gap-3 mt-2 text-xs text-text-muted">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Oct 12, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 38 min</span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end justify-center gap-2 pl-4 border-l border-white/5">
+<button class="text-white/60 hover:text-primary transition-colors p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="text-white/60 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+<!-- List Item 2 -->
+<article class="group relative flex flex-col sm:flex-row gap-4 p-4 rounded-xl bg-surface-dark border border-white/5 hover:bg-surface-highlight transition-all hover:border-white/10">
+<div class="shrink-0 relative">
+<div class="size-20 sm:size-24 rounded-lg bg-cover bg-center shadow-md grayscale-[30%] group-hover:grayscale-0 transition-all" data-alt="Aerial view of a dense city grid representing urban planning" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAow2wPrd_dPBSCkidiO6aS_OlQetaU1CLW6LqQOuK8_TmsWYdgyVhw1hopOZ5crXEpy8w8boG2wC2dPda4N49lo6Kvko31FcSTOsc5OAMg87zV_oedcooY3oqn-qG6hkDWVgXsmEn_1rixnAzsiQ1hp3rwNosC-SRUeZ0iyvaFSXZLN1m8z8nWSd8aWrkmfhDNP00GEJ0oMWuCjfMCsTpWB_x3o0kxkrl-zpIE9T9_XlOHcP8NC2syKmT4v-PzlQkfguOwiAZIBLFd');"></div>
+<button class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+<span class="material-symbols-outlined text-white text-3xl drop-shadow-md filled" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="text-xs font-bold text-white/40">EP 40</span>
+<span class="text-[10px] uppercase tracking-wider font-bold text-amber-200 bg-amber-900/30 px-2 py-0.5 rounded border border-amber-800/50">Infrastructure</span>
+</div>
+<h3 class="text-lg font-bold text-white font-display leading-tight group-hover:text-primary-hover transition-colors">
+                                Urban Planning in Developing Nations
+                            </h3>
+<p class="text-sm text-text-muted line-clamp-1">A deep dive into infrastructure challenges in rapidly growing cities with Raj Patel.</p>
+<div class="flex items-center gap-3 mt-2 text-xs text-text-muted">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Sep 28, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 52 min</span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end justify-center gap-2 pl-4 border-l border-white/5">
+<button class="text-white/60 hover:text-primary transition-colors p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="text-white/60 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+<!-- List Item 3 -->
+<article class="group relative flex flex-col sm:flex-row gap-4 p-4 rounded-xl bg-surface-dark border border-white/5 hover:bg-surface-highlight transition-all hover:border-white/10">
+<div class="shrink-0 relative">
+<div class="size-20 sm:size-24 rounded-lg bg-cover bg-center shadow-md grayscale-[30%] group-hover:grayscale-0 transition-all" data-alt="Doctor holding a stethoscope representing healthcare policy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2nT0L8MRZ-gJxcwi1lL_Z-O80b_rHhDUvSwO6qSVQyBjUp3nsv-Rhw53uYJb3RIK8sDWLutD9I8eav9fbFR4GVetYBx_8vcwU7pmb7-C8XuwSeS3OyC3Deugvhn-FwZHp_ragziWR3ZAEpVTt0p6WMg_zU8Elub6FTSZwPj4yrjSAbit-fqY8p7lwZ66AEO-GNmZzm-KWcYN6QQdntnmpn2fJB5JZUIUbHFMuFBcqzaRFOlPLQ9nYp9anru95f8NHKn-D-TUpgcXI');"></div>
+<button class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+<span class="material-symbols-outlined text-white text-3xl drop-shadow-md filled" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="text-xs font-bold text-white/40">EP 39</span>
+<span class="text-[10px] uppercase tracking-wider font-bold text-blue-200 bg-blue-900/30 px-2 py-0.5 rounded border border-blue-800/50">Healthcare</span>
+</div>
+<h3 class="text-lg font-bold text-white font-display leading-tight group-hover:text-primary-hover transition-colors">
+                                Access to Care in Remote Regions
+                            </h3>
+<p class="text-sm text-text-muted line-clamp-1">Dr. Elena Rodriguez shares her experiences with mobile clinics in the Andes.</p>
+<div class="flex items-center gap-3 mt-2 text-xs text-text-muted">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Sep 14, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 44 min</span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end justify-center gap-2 pl-4 border-l border-white/5">
+<button class="text-white/60 hover:text-primary transition-colors p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="text-white/60 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+</section>
+</main>
+<!-- Right Column: Sidebar (4 cols) -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="sticky top-6 space-y-8">
+<!-- Subscribe Card -->
+<div class="bg-surface-highlight rounded-2xl p-6 border border-white/5 shadow-lg relative overflow-hidden">
+<!-- Decorative gradient blob -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="size-12 rounded-xl bg-background-dark flex items-center justify-center mb-4 border border-white/5">
+<span class="material-symbols-outlined text-primary text-2xl">mail</span>
+</div>
+<h3 class="font-display text-xl font-bold text-white mb-2">Never miss an insight</h3>
+<p class="text-sm text-text-muted mb-4">Get new episodes and curated CSR resources delivered to your inbox bi-weekly.</p>
+<form class="flex flex-col gap-3">
+<input class="bg-background-dark border border-white/10 text-white text-sm rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent placeholder-white/20 transition-all" placeholder="your@email.com" type="email"/>
+<button class="bg-white text-background-dark font-bold text-sm px-4 py-3 rounded-lg hover:bg-gray-200 transition-colors" type="button">
+                                    Subscribe
+                                </button>
+</form>
+<p class="text-[10px] text-white/30 mt-3 text-center">No spam, just impact. Unsubscribe anytime.</p>
+</div>
+</div>
+<!-- Guest Suggestion Form -->
+<div class="bg-surface-dark rounded-2xl p-6 border border-white/5 shadow-sm" id="guest-form">
+<h3 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-sage">psychology</span>
+                            Who should we talk to?
+                        </h3>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-text-muted uppercase tracking-wider mb-1.5">Guest Name / Topic</label>
+<input class="w-full bg-background-dark border border-white/10 text-white text-sm rounded-lg px-3 py-2.5 focus:outline-none focus:border-primary/50 transition-colors" placeholder="e.g. Jane Goodall or Ocean Cleanup" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-text-muted uppercase tracking-wider mb-1.5">Why them?</label>
+<textarea class="w-full bg-background-dark border border-white/10 text-white text-sm rounded-lg px-3 py-2.5 focus:outline-none focus:border-primary/50 transition-colors resize-none" placeholder="Briefly describe their work..." rows="3"></textarea>
+</div>
+<button class="w-full border border-primary text-primary hover:bg-primary hover:text-white transition-colors font-bold text-sm py-2.5 rounded-lg">
+                                Submit Suggestion
+                            </button>
+</div>
+</div>
+<!-- Tag Cloud -->
+<div>
+<h3 class="font-display text-sm font-bold text-white/60 uppercase tracking-widest mb-4">Explore by Topic</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#CSR</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#Environment</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#Policy</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#Healthcare</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#Education</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#TechForGood</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-dark border border-white/5 text-xs text-text-muted hover:text-white hover:border-accent-sage/50 hover:bg-accent-sage/10 transition-all">#GlobalSouth</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Footer Note (since no official footer) -->
+<div class="mt-20 pt-8 border-t border-white/5 text-center">
+<p class="text-text-muted text-sm">© 2023 Impexus Consultancy LLP. All rights reserved.</p>
+</div>
+</div>
+</body></html>

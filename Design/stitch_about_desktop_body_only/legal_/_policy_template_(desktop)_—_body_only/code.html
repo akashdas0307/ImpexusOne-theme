@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legal / Policy Template</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b606b",
+                        "primary-dark": "#07464e",
+                        "accent": "#F9A825", // Amber for callouts
+                        "background-light": "#ffffff",
+                        "background-dark": "#1a202d",
+                        "surface-light": "#F8F9FA",
+                        "surface-dark": "#2d3748",
+                        "text-main": "#111718",
+                        "text-muted": "#638488",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for sidebar if needed */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Main Content Wrapper -->
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 md:px-8 py-8 md:py-12">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm font-medium mb-8 text-text-muted dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-text-main dark:text-white">Legal</span>
+</nav>
+<!-- Hero Section -->
+<header class="mb-12 md:mb-16 border-b border-gray-100 dark:border-gray-800 pb-8">
+<div class="max-w-4xl">
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-text-main dark:text-white mb-4 leading-[1.1]">
+                        Privacy Policy
+                    </h1>
+<div class="flex items-center gap-2 text-text-muted dark:text-gray-400">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<p class="text-base font-normal">Last updated: October 24, 2023</p>
+</div>
+</div>
+</header>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+<!-- Sidebar: Sticky Table of Contents -->
+<aside class="hidden lg:block lg:col-span-3 lg:col-start-1">
+<div class="sticky top-8 overflow-y-auto max-h-[calc(100vh-4rem)] sidebar-scroll pr-4">
+<p class="text-xs font-bold uppercase tracking-wider text-text-muted dark:text-gray-500 mb-4 pl-3">
+                            Contents
+                        </p>
+<nav class="flex flex-col space-y-1">
+<a class="group flex items-center border-l-2 border-primary bg-primary/5 pl-3 py-2 text-sm font-semibold text-primary rounded-r-lg transition-all" href="#introduction">
+                                1. Introduction
+                            </a>
+<a class="group flex items-center border-l-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 pl-3 py-2 text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-gray-200 rounded-r-lg transition-all" href="#summary">
+                                Key Summary
+                            </a>
+<a class="group flex items-center border-l-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 pl-3 py-2 text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-gray-200 rounded-r-lg transition-all" href="#info-collect">
+                                2. Information We Collect
+                            </a>
+<a class="group flex items-center border-l-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 pl-3 py-2 text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-gray-200 rounded-r-lg transition-all" href="#info-use">
+                                3. How We Use Data
+                            </a>
+<a class="group flex items-center border-l-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 pl-3 py-2 text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-gray-200 rounded-r-lg transition-all" href="#sharing">
+                                4. Sharing &amp; Disclosure
+                            </a>
+<a class="group flex items-center border-l-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 pl-3 py-2 text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-gray-200 rounded-r-lg transition-all" href="#security">
+                                5. Data Security
+                            </a>
+<a class="group flex items-center border-l-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 pl-3 py-2 text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-gray-200 rounded-r-lg transition-all" href="#contact">
+                                6. Contact Us
+                            </a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Column -->
+<article class="col-span-1 lg:col-span-8 lg:col-start-5 max-w-none prose dark:prose-invert prose-headings:font-display prose-headings:font-bold prose-p:text-text-main dark:prose-p:text-gray-300 prose-li:text-text-main dark:prose-li:text-gray-300">
+<!-- Section 1: Introduction -->
+<section class="mb-12 scroll-mt-24" id="introduction">
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white mb-4">1. Introduction</h2>
+<p class="text-lg leading-relaxed text-text-muted dark:text-gray-300 mb-6">
+                            Welcome to Impexus Consultancy LLP. We are committed to protecting your personal information and your right to privacy. When you visit our website, use our mobile application, or use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we describe our privacy policy. We seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
+                        </p>
+<p class="text-base leading-relaxed text-text-main dark:text-gray-300">
+                            We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy policy that you do not agree with, please discontinue use of our Sites and our services.
+                        </p>
+</section>
+<!-- Key Points Callout -->
+<section class="mb-12 scroll-mt-24" id="summary">
+<div class="bg-amber-50 dark:bg-amber-900/10 border-l-4 border-amber-400 rounded-r-lg p-6 md:p-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-600 dark:text-amber-400 text-3xl shrink-0 mt-1">lightbulb</span>
+<div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-amber-100 mb-2">Key Points Summary</h3>
+<p class="text-gray-700 dark:text-gray-300 mb-4">We know legal documents can be long. Here are the most critical things you should know:</p>
+<ul class="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300 text-sm md:text-base font-medium">
+<li>We only collect information necessary to provide our consulting services.</li>
+<li>We never sell your personal data to third parties for marketing purposes.</li>
+<li>You have the right to request a copy of your data or ask for it to be deleted at any time.</li>
+<li>We use industry-standard encryption to protect your information in transit and at rest.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Info We Collect -->
+<section class="mb-12 scroll-mt-24" id="info-collect">
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white mb-6">2. Information We Collect</h2>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Personal Information You Disclose to Us</h3>
+<p class="text-base leading-relaxed text-text-muted dark:text-gray-300 mb-3">
+                                    We collect personal information that you voluntarily provide to us when expressing an interest in obtaining information about us or our products and services, when participating in activities on the Services or otherwise contacting us.
+                                </p>
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg p-5 border border-gray-100 dark:border-gray-700">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-medium">Name and Contact Data</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-medium">Credentials</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-medium">Payment Data</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-medium">Social Media Login Data</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Information Automatically Collected</h3>
+<p class="text-base leading-relaxed text-text-muted dark:text-gray-300">
+                                    We automatically collect certain information when you visit, use or navigate the Services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services and other technical information.
+                                </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Usage -->
+<section class="mb-12 scroll-mt-24" id="info-use">
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white mb-6">3. How We Use Your Information</h2>
+<p class="text-base leading-relaxed text-text-muted dark:text-gray-300 mb-6">
+                            We use personal information collected via our Services for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.
+                        </p>
+<div class="space-y-4">
+<div class="flex gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
+<div class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">manage_accounts</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white mb-1">Account Creation &amp; Management</h4>
+<p class="text-sm text-text-muted dark:text-gray-400">To facilitate account creation and logon process and keep your account in working order.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
+<div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white mb-1">Administrative Information</h4>
+<p class="text-sm text-text-muted dark:text-gray-400">To send you product, service and new feature information and/or information about changes to our terms, conditions, and policies.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
+<div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">shield</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white mb-1">Safety &amp; Security</h4>
+<p class="text-sm text-text-muted dark:text-gray-400">To protect our Services and to respond to legal requests and prevent harm.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Sharing -->
+<section class="mb-12 scroll-mt-24" id="sharing">
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white mb-4">4. Sharing Your Information</h2>
+<p class="text-base leading-relaxed text-text-muted dark:text-gray-300 mb-4">
+                            We may process or share data based on the following legal basis:
+                        </p>
+<ul class="list-disc pl-5 space-y-3 text-text-main dark:text-gray-300 marker:text-primary">
+<li class="pl-2"><strong>Consent:</strong> We may process your data if you have given us specific consent to use your personal information in a specific purpose.</li>
+<li class="pl-2"><strong>Legitimate Interests:</strong> We may process your data when it is reasonably necessary to achieve our legitimate business interests.</li>
+<li class="pl-2"><strong>Performance of a Contract:</strong> Where we have entered into a contract with you, we may process your personal information to fulfill the terms of our contract.</li>
+<li class="pl-2"><strong>Legal Obligations:</strong> We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process.</li>
+</ul>
+</section>
+<!-- Section 5: Security -->
+<section class="mb-12 scroll-mt-24" id="security">
+<h2 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white mb-4">5. Data Security</h2>
+<p class="text-base leading-relaxed text-text-muted dark:text-gray-300 mb-4">
+                            We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the services within a secure environment.
+                        </p>
+</section>
+<!-- Bottom Contact Card -->
+<section class="mt-16 scroll-mt-24" id="contact">
+<div class="relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
+<!-- Decorator Pattern -->
+<div class="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">mail</span>
+</span>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Still have questions?</h3>
+</div>
+<p class="text-text-muted dark:text-gray-400 mb-1 max-w-lg">
+                                        Our Data Protection Officer is available to help with any concerns about your privacy or our policy.
+                                    </p>
+</div>
+<div class="flex-shrink-0">
+<a class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md" href="mailto:privacy@impexus.com">
+                                        Contact Support
+                                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</article>
+</div>
+</main>
+</div>
+</body></html>

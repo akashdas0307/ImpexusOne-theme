@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Podcast Episode Template</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007a8a",
+                        "accent-gold": "#CEB171",
+                        "bg-page": "#131416",
+                        "bg-card": "#212428",
+                        "bg-card-hover": "#2a2e33",
+                        "text-muted": "#9ab8bc",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "heading": ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for transcript if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .text-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-bg-page text-white font-display min-h-screen overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="layout-container flex flex-col items-center w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+<!-- Header Zone -->
+<div class="w-full max-w-[1100px] flex flex-col gap-6 mb-12">
+<!-- Badge -->
+<div class="flex">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white text-xs font-bold tracking-wide uppercase">
+                    Podcast Episode #42
+                </span>
+</div>
+<!-- H1 Title -->
+<h1 class="text-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white">
+                Navigating Digital Transformation in 2024
+            </h1>
+<!-- Guest Card -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-5 rounded-lg bg-bg-card border border-white/5 shadow-lg relative overflow-hidden group">
+<!-- Subtle decorative gradient -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="relative shrink-0">
+<div class="w-20 h-20 rounded-full bg-cover bg-center ring-2 ring-white/10" data-alt="Portrait of Sarah Jenkins smiling professionally" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPkrUPXKJwQJUdZl7a-8OgWv9o2Hnon9dbHETz0RLfFFkEXK_kbbwkno4WiKsSz8WywW4UlnoJUcgoW3wp1AfphCRau3SUZ5nmE4Q2zeZFRCKvitd8UjoQh774OJsTRBLQUO_dze63OeamICTlxiyNx97D70rgnE7tEv-8Zucl3M_K0dEXmcDfERmK4HE34d-EJLm_0nYow7JiWX1HNyWo-t_Hdiri886TjypjkwVEBrUKW9c3CznHrlkVwhjQe3u6aqT5MlGxg8YY");'></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-heading text-xl font-bold text-white mb-1">Sarah Jenkins</h3>
+<p class="text-text-muted text-sm mb-3">CTO at TechStream</p>
+<div class="flex flex-wrap items-center gap-3 text-xs font-medium text-white/60">
+<span class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">sell</span> AI Strategy
+                        </span>
+<span class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">sell</span> Leadership
+                        </span>
+<span class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">sell</span> ERP
+                        </span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-primary font-heading font-bold text-lg px-4 border-l border-white/10 h-full">
+<span class="material-symbols-outlined">schedule</span>
+                    45m
+                </div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="w-full max-w-[1100px] grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Content (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-10">
+<!-- Media Player -->
+<div class="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-2xl group cursor-pointer border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity duration-500" data-alt="Abstract business meeting background for video thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIExOjTGu_sv-Zwn6v4KQ5DCd7teWQn8K3QKZSFa34OB2BRXGFZT3qedlJvEW4O3NxYGvcuTp4P7lHFu-nN8jCCPy1HZJHLsDMZUixQdtwQlaGF4D4PlkykUlUwsh9wNrTGT7r4ARhIKlVlFodFf1_0jQTP5dx5ltLIsfoOKLh_IvcW3bheDynonizdirlLYDItyohuEZtLNLjg-9nCl4oOIBgzOYXyEttkDuiMEug23sJoUC1bzl55UzL26-U3Dz9In-XD0ReZG8x");'></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 md:w-20 md:h-20 bg-primary/90 hover:bg-primary text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(0,122,138,0.5)] scale-100 group-hover:scale-110">
+<span class="material-symbols-outlined text-4xl md:text-5xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
+<span class="bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-mono text-white/80">YouTube Embed Placeholder</span>
+</div>
+</div>
+<!-- Key Takeaways -->
+<section class="bg-bg-card rounded-xl p-6 md:p-8 border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-accent-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<h2 class="text-heading text-2xl font-bold text-white mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-gold">lightbulb</span> Key Takeaways
+                    </h2>
+<ul class="space-y-4">
+<li class="flex gap-4 items-start group">
+<span class="mt-1.5 w-2 h-2 rounded-full bg-accent-gold shadow-[0_0_8px_rgba(206,177,113,0.6)] shrink-0"></span>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-white group-hover:text-accent-gold transition-colors">Why legacy systems fail</span>
+<span class="text-text-muted text-sm leading-relaxed">An in-depth analysis of technical debt and why simply patching old systems is costing companies millions in lost productivity.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start group">
+<span class="mt-1.5 w-2 h-2 rounded-full bg-accent-gold shadow-[0_0_8px_rgba(206,177,113,0.6)] shrink-0"></span>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-white group-hover:text-accent-gold transition-colors">The role of AI in consultation</span>
+<span class="text-text-muted text-sm leading-relaxed">How predictive modeling is shifting the consultancy paradigm from reactive problem solving to proactive strategy.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start group">
+<span class="mt-1.5 w-2 h-2 rounded-full bg-accent-gold shadow-[0_0_8px_rgba(206,177,113,0.6)] shrink-0"></span>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-white group-hover:text-accent-gold transition-colors">Future leadership trends</span>
+<span class="text-text-muted text-sm leading-relaxed">Managing remote engineering teams effectively requires a shift from hours-based management to outcome-based leadership.</span>
+</div>
+</li>
+</ul>
+</section>
+<!-- Show Notes -->
+<section>
+<h2 class="text-heading text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4">Show Notes</h2>
+<div class="space-y-6 pl-2">
+<div class="flex gap-4 md:gap-6 group">
+<button class="shrink-0 font-heading font-bold text-primary group-hover:text-white transition-colors text-lg pt-0.5">02:15</button>
+<p class="text-gray-300 leading-relaxed">Introduction to Sarah Jenkins and her background in large-scale system architecture before joining TechStream.</p>
+</div>
+<div class="flex gap-4 md:gap-6 group">
+<button class="shrink-0 font-heading font-bold text-primary group-hover:text-white transition-colors text-lg pt-0.5">08:42</button>
+<p class="text-gray-300 leading-relaxed">Defining "Digital Transformation" in 2024 versus 2014. The buzzwords have changed, but have the problems?</p>
+</div>
+<div class="flex gap-4 md:gap-6 group">
+<button class="shrink-0 font-heading font-bold text-primary group-hover:text-white transition-colors text-lg pt-0.5">14:30</button>
+<p class="text-gray-300 leading-relaxed">The biggest challenge in ERP migration: It's not the code, it's the culture. Sarah explains how to get stakeholder buy-in.</p>
+</div>
+<div class="flex gap-4 md:gap-6 group">
+<button class="shrink-0 font-heading font-bold text-primary group-hover:text-white transition-colors text-lg pt-0.5">22:10</button>
+<p class="text-gray-300 leading-relaxed">Discussion on AI implementation risks and data privacy concerns within fintech sectors.</p>
+</div>
+<div class="flex gap-4 md:gap-6 group">
+<button class="shrink-0 font-heading font-bold text-primary group-hover:text-white transition-colors text-lg pt-0.5">38:05</button>
+<p class="text-gray-300 leading-relaxed">Closing thoughts and book recommendations for aspiring CTOs.</p>
+</div>
+</div>
+</section>
+<!-- Links Mentioned -->
+<section class="bg-bg-card/50 rounded-lg p-6 border border-white/5">
+<h3 class="text-sm font-bold text-text-muted uppercase tracking-wider mb-4">Links Mentioned</h3>
+<ul class="space-y-2">
+<li>
+<a class="flex items-center gap-2 text-primary hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span class="underline decoration-primary/30 group-hover:decoration-primary underline-offset-4">TechStream Official Website</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 text-primary hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span class="underline decoration-primary/30 group-hover:decoration-primary underline-offset-4">Book: "Team Topologies"</span>
+</a>
+</li>
+</ul>
+</section>
+<!-- Transcript Accordion -->
+<section>
+<details class="group bg-bg-card rounded-lg overflow-hidden border border-white/5">
+<summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-white/5 transition-colors select-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted">description</span>
+<span class="text-heading text-lg font-bold text-white">Read Full Transcript</span>
+</div>
+<span class="material-symbols-outlined transform group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="p-6 pt-2 border-t border-white/5 text-gray-300 leading-relaxed space-y-4">
+<p><strong class="text-primary">Host:</strong> Welcome back to the Impexus podcast. Today we're diving deep into the messy reality of digital transformation.</p>
+<p><strong class="text-white">Sarah:</strong> Thanks for having me. It is messy, isn't it? I think people expect a clean cutover, but it's always an evolution.</p>
+<p><strong class="text-primary">Host:</strong> Exactly. Let's start with your time at TechStream. You walked into a legacy environment...</p>
+<div class="p-4 bg-black/20 rounded text-center text-sm text-text-muted mt-4">
+                                ... Transcript truncated for preview ...
+                            </div>
+</div>
+</details>
+</section>
+</div>
+<!-- Right Column: Sticky Sidebar (4 cols) -->
+<aside class="lg:col-span-4 space-y-6">
+<div class="sticky top-6 space-y-6">
+<!-- Subscribe Card -->
+<div class="bg-bg-card rounded-xl p-6 border border-white/5 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent-gold"></div>
+<h3 class="text-heading text-xl font-bold text-white mb-2">Never miss an insight</h3>
+<p class="text-text-muted text-sm mb-5">Join 15k+ leaders receiving our weekly strategic breakdown.</p>
+<form class="space-y-3" onsubmit="event.preventDefault();">
+<input class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="work@email.com" type="email"/>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-4 rounded-lg text-sm transition-all flex items-center justify-center gap-2" type="submit">
+                                Subscribe Free
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Suggest Guest -->
+<div class="bg-bg-card/50 rounded-xl p-6 border border-white/5">
+<div class="flex items-center gap-2 mb-4 text-white">
+<span class="material-symbols-outlined text-primary">person_add</span>
+<h3 class="font-bold text-sm uppercase tracking-wider">Suggest a Topic</h3>
+</div>
+<p class="text-text-muted text-xs mb-4">Who should we interview next? What keeps you up at night?</p>
+<form class="flex gap-2" onsubmit="event.preventDefault();">
+<input class="flex-1 bg-black/30 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary" placeholder="Topic or Guest Name" type="text"/>
+<button class="bg-white/10 hover:bg-white/20 text-white p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+</div>
+<!-- Share Tools -->
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold text-text-muted uppercase tracking-wider">Share Episode</span>
+<div class="flex gap-2">
+<button class="flex-1 bg-bg-card hover:bg-[#1DA1F2] hover:text-white text-gray-400 p-3 rounded-lg border border-white/5 transition-all duration-300 flex justify-center items-center group">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</button>
+<button class="flex-1 bg-bg-card hover:bg-[#0077b5] hover:text-white text-gray-400 p-3 rounded-lg border border-white/5 transition-all duration-300 flex justify-center items-center">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</button>
+<button class="flex-1 bg-bg-card hover:bg-primary hover:text-white text-gray-400 p-3 rounded-lg border border-white/5 transition-all duration-300 flex justify-center items-center">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Related Content & Bottom CTA -->
+<div class="w-full max-w-[1100px] mt-24 flex flex-col gap-12">
+<!-- Related Episodes -->
+<div>
+<h3 class="text-heading text-2xl font-bold text-white mb-6">More Episodes</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<a class="group block" href="#">
+<div class="bg-bg-card rounded-lg border border-white/5 overflow-hidden transition-transform duration-300 group-hover:-translate-y-1">
+<div class="aspect-[3/2] bg-cover bg-center" data-alt="Conference room with glass walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtm8krNC70PEJK15B3ue29Nrv44pNhLqWJefT8M7BKjzijU_M9P-oPtEEUia83ZL-xioOz79zhq6LDfYq3i6LoIW3tpDLd1n04yuvFbShfM0uje0rgGw0XXu3oChQgINjPVSt71rjb34RI2FVYLxLSzcatYQhsBBu4zvdfeFzX1DIKcBC0BY3USg6Zc6bqx9k9p89wcuR2-cuhNKXKBHpIYJdv-361LYBHfaeZDUfLp-6jwXevH2BzKVgsYEkgfJPfx2J-pNwS_5cC");'></div>
+<div class="p-4">
+<p class="text-xs text-primary font-bold mb-2">EPISODE #41</p>
+<h4 class="text-white font-bold leading-tight group-hover:text-primary transition-colors">Scaling Agile in Enterprise</h4>
+</div>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group block" href="#">
+<div class="bg-bg-card rounded-lg border border-white/5 overflow-hidden transition-transform duration-300 group-hover:-translate-y-1">
+<div class="aspect-[3/2] bg-cover bg-center" data-alt="Team working on startup project" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjZccdZibg7CYTe0Xo1qlpkWLyACn8vBfNTlqMCcUIsqAQBBdnEViGhtdckX46whP9y-iTcy5ZJG1kuQ0NRjtSnZl4sNb6ZewoUllmtmTxtEUdOGYGigKizB-BibsZ69X35KSHbAtDFX1wZ0Wxr09SWxUa-vW2iLzLgNe7mEukhx_C-V07PKgh419sLWMjQSE4Yef7VY_gzRfZ7poO1JZte0AJuiLSNCkQUS34oX1VQYicApW1Cz3Iq1SN5iCroduayNRbA_iK4V_7");'></div>
+<div class="p-4">
+<p class="text-xs text-primary font-bold mb-2">EPISODE #40</p>
+<h4 class="text-white font-bold leading-tight group-hover:text-primary transition-colors">The Data Privacy Paradox</h4>
+</div>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group block" href="#">
+<div class="bg-bg-card rounded-lg border border-white/5 overflow-hidden transition-transform duration-300 group-hover:-translate-y-1">
+<div class="aspect-[3/2] bg-cover bg-center" data-alt="People working on laptops in a cafe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJcx1HCyAc5ML42OdsYF-vdO7X6I7U7a_86bY-5v-tyd0WjYd9a-QSNIS34VCpRlxgp7t6AVh8l5byC0kLr3l8NFCo5J-9O90jCVa23e_7AYcNRZGvDNQ8z-RixS5WEElLD52rqZUJkzY4KFtWqQL1M2QLl0IHSV0ayT1KrNi-P3T9O7K8uE_BVbNH6Rlx1tnKJ7BPJseLcstqNFPfrqzmvKaZOnZvHrWIFi1qDN9FMHk4xCKB0N9GGcPMTBoVEQXhW8V79DfSNUuy");'></div>
+<div class="p-4">
+<p class="text-xs text-primary font-bold mb-2">EPISODE #39</p>
+<h4 class="text-white font-bold leading-tight group-hover:text-primary transition-colors">Remote First: A CTO's Guide</h4>
+</div>
+</div>
+</a>
+</div>
+</div>
+<!-- CTA Band -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-primary/10 border border-primary/20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="absolute inset-0 bg-gradient-to-r from-bg-page via-transparent to-transparent opacity-80 z-0"></div>
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-xl">
+<h2 class="text-heading text-3xl font-bold text-white mb-3">Ready to transform your strategy?</h2>
+<p class="text-gray-300 text-lg">Book a consultation with our experts to discuss your specific digital challenges.</p>
+</div>
+<div class="relative z-10 shrink-0">
+<button class="bg-white text-bg-page hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-colors shadow-lg flex items-center gap-2">
+                        Book Consultation
+                        <span class="material-symbols-outlined">calendar_month</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insights Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b7898",
+                        "primary-dark": "#145a72",
+                        "background-light": "#ffffff",
+                        "background-dark": "#131415",
+                        "surface-light": "#f8fafc",
+                        "surface-dark": "#1e2022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col">
+<div class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-12 flex-grow">
+<!-- 1. Hero Section -->
+<header class="mb-10">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-px w-8 bg-primary"></span>
+<span class="text-primary text-sm font-bold uppercase tracking-widest">Knowledge Base</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+                    Insights Hub
+                </h1>
+<p class="text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl">
+                    Expert perspectives on CSR, development strategy, and impact assessment. Data-driven analysis for modern organizations.
+                </p>
+</div>
+</header>
+<!-- 2. Library Controls -->
+<div class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 py-4 mb-10 transition-all">
+<div class="flex flex-col lg:flex-row gap-4 lg:items-center justify-between">
+<!-- Search -->
+<div class="relative w-full lg:w-96 group">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400" placeholder="Search reports, articles, data..." type="text"/>
+</div>
+<!-- Filters & Tabs -->
+<div class="flex flex-1 items-center justify-between lg:justify-end gap-4 overflow-x-auto scrollbar-hide">
+<!-- Category Tabs -->
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold shadow-sm transition-transform active:scale-95">All</button>
+<button class="px-4 py-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-slate-600 dark:text-slate-300 text-sm font-medium transition-colors whitespace-nowrap">RFP Guides</button>
+<button class="px-4 py-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-slate-600 dark:text-slate-300 text-sm font-medium transition-colors whitespace-nowrap">Impact Tips</button>
+<button class="px-4 py-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-slate-600 dark:text-slate-300 text-sm font-medium transition-colors whitespace-nowrap">Case Studies</button>
+</div>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2 hidden lg:block"></div>
+<!-- Filter Dropdowns -->
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span class="hidden sm:inline">Filter</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-surface-light dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+<span class="hidden sm:inline">Sort</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Featured Section (Bento Grid) -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+                    Featured Insights
+                </h2>
+<a class="text-sm font-bold text-primary hover:text-primary-dark flex items-center gap-1" href="#">
+                    View Archive <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 md:h-[500px]">
+<!-- Large Hero Card -->
+<div class="col-span-1 md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Business team analyzing data on a large screen in a modern office" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7sKavHvagw33PAKCBtfM8lTb1FGDNEu1gIYsDYbXxFoRbhpMWAp9Rvk5chxXC5Ze4eKj9CN0a8zy91NukGuEYTfOwsLm7rZ9dDScHA6K8gaZ4AcWCCfQKVdjObQ8ZZQe7JgJXM1BBtGhLh-uWR7Sf1ORMemSNX8VzlE75Oql1SdjufHM4Izm_na7jeKbIKe7PViWg1IKUWbqFAsku7TfJKKWoAzZvZe4VcI-OgVKhwsh2IjdISckk53CQjvHlMKThdSxbXuoTOMiC');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white text-xs font-bold mb-4">
+                            Strategic CSR
+                        </div>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight group-hover:underline decoration-2 underline-offset-4">
+                            Navigating the New CSR Amendment 2024: A Comprehensive Playbook
+                        </h3>
+<div class="flex items-center gap-4 text-slate-300 text-sm font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Oct 24, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 12 min read</span>
+</div>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="col-span-1 md:col-span-1 md:row-span-1 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-xl p-5 flex flex-col justify-between hover:shadow-lg hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400 text-xs font-bold px-2 py-1 rounded">RFP Guide</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">arrow_outward</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">5 Essential Tips for High-Impact RFP Writing</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Master the art of crafting proposals that win grants and secure partnerships.</p>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="col-span-1 md:col-span-1 md:row-span-1 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Data visualization graphs on a computer screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQx44t1Hs4stV5qFdS3Zi67x2h5Gyj2wdQDay17kueU1KMtbQw5EZqhLLwkvqeadxCMqCEjXveAqIQQgSwTgcwKjem1rz3rE4VRnUI3ovETi0K4gT2vVsxEF6dyea3A9TrpKhk8_lYaNjnwf1qUBP6fX-r3nKDlmATYwJIJcrQ_Ssyzn4XnsExusGhtiI2cGSijIwXHU4da8rGmkaFafL5S_NVqbh6wKbTDMp0qAtToFqb-tvptaexMnJ2S46D5Paf8Cn_c1fsJEF6');"></div>
+<div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/70 transition-colors"></div>
+<div class="absolute bottom-0 p-5 w-full">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-green-400 text-[20px]">analytics</span>
+<span class="text-green-400 text-xs font-bold uppercase">Analytics</span>
+</div>
+<h4 class="text-lg font-bold text-white leading-snug">Impact Measurement 101</h4>
+</div>
+</div>
+<!-- Small Card 3 -->
+<div class="col-span-1 md:col-span-1 md:row-span-1 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-xl p-5 flex flex-col justify-between hover:shadow-lg hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-xs font-bold px-2 py-1 rounded">Policy</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">arrow_outward</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">Sustainable Supply Chains</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Integrating sustainability metrics into vendor selection processes.</p>
+</div>
+</div>
+<!-- Small Card 4 -->
+<div class="col-span-1 md:col-span-1 md:row-span-1 bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-xl p-5 flex flex-col justify-between hover:shadow-lg hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 text-xs font-bold px-2 py-1 rounded">Partnership</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">arrow_outward</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">NGO Evaluation Framework</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Key metrics for assessing potential implementation partners.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Main Layout (Latest + Sidebar) -->
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Left Column: Latest Grid -->
+<main class="flex-1">
+<div class="flex items-center gap-3 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Latest Reports</h2>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold border border-slate-200 dark:border-slate-700">128</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Article Card 1 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
+<img class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="People planting trees in a community park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOuPijBl5ngcgmBgVMNJf_a2K5fEa8frkvmt0Uhq_RyJ8iFxklvh6KJSC8h4PdZBVLj83Z1aqKMp_lpgDSNq4BNPjkBQe6-uwxn5l8sFBO5UCDif-7mHPsOs3QE5aOwCiAuDR7nNUrxxanMysXijtVrjlCkBgd51VNZyVFTW37fep8p9cWmhteLXIfZpffBTnaQjAPGWQ6sBirq0DvnphJs116F1RVQfLdTfjkqMxt-bwWLniX97-jHI3b-DE1Q3LY3HLYPkph0DXQ"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 dark:bg-black/80 backdrop-blur text-slate-900 dark:text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-sm">Environment</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Carbon Offsetting Strategies for SMEs</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3 line-clamp-2">Practical approaches for small enterprises to calculate and offset their carbon footprint effectively.</p>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">JD</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">John Doe</span>
+</div>
+<span class="text-xs text-slate-400 font-mono">PDF • 2.4 MB</span>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
+<img class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="Diverse group of professionals having a discussion in a bright office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ChaJp_gjNvDLjyKJ1u0A5R5EKTjwgxiOLM3YreM8AxBOCKffQ0hn-s5XYUzJZHwNaO1B2-jMwVem8iFkvZouTd9GfEn74UXfjHJGTAbHqPCs87DWrhbhQ4BExWluq5gd-9pXp-rb9JjYpzd0M41Yh1rFoQ7Mw_oj1-0l71YCQdYe_Jsw_q9Z-8JCOjiPqdn_TlfQMxjJpviu_vT9KF66Vy3cq6re3MPtScgoZgb2aACSuZxOePu9BhaAcaFnLwkd4liPMO5Msj6d"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 dark:bg-black/80 backdrop-blur text-slate-900 dark:text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-sm">Social Impact</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Measuring Social Return on Investment (SROI)</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3 line-clamp-2">A step-by-step guide to quantifying the social value generated by your CSR initiatives.</p>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold">AS</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Alice Smith</span>
+</div>
+<span class="text-xs text-slate-400 font-mono">Article • 8 min</span>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
+<img class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="Modern conference room with team discussing strategy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8VbbFUO_ljeSgaM6RQYr5imzU8zTrpLH6wtC4jBi8DcSX7EQFc9ukY6CIeM801x3fh9sHUln7oc44yC3Yp4DAMS4n3scJR3Cg7VfEk-aPp6OuRFtwsZJe-1QempfgIHLrxIZw7HHi6PW4MAUO0yDjLOZV6kQi-lcT8EacdoIo6BcAn9NzQ6f0z2e6BdD3VndRzm1G-dDsp8hDeJ4CDqiAQJoal_BDDb-LRTngGNVhSpMo4KI7voc2gmeHY0qxrKwlXMnWKSItnZAw"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 dark:bg-black/80 backdrop-blur text-slate-900 dark:text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-sm">Governance</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Boardroom Diversity: Beyond Compliance</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3 line-clamp-2">Why diverse leadership is crucial for sustainable business growth and risk management.</p>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-teal-600 flex items-center justify-center text-white text-xs font-bold">MK</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Mike Khan</span>
+</div>
+<span class="text-xs text-slate-400 font-mono">Report • 15 pages</span>
+</div>
+</article>
+<!-- Article Card 4 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
+<img class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="Engineer checking solar panels on a roof" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDesN335Hfolg1-caFJJSAmnhxztmQRXpQPnGNkW8Dz5iBosBLBUekgm0Tf9V2AW0kFW8Jthe1PD708Bh_EGGdi-ZHzw3IPek-Zl1CuMgK6FOC58wPRuOCCvpSgtcLPhgOBCtNHCH9t70LNvg7T9CJzkI1AsQbVF1FtHk53ZdunCUmfaTLyjVPmfCMdNTByLDdFWxOFJtOxgnE3hPSSYxAKnSfeRdTpQuOXAnTfNyEg2Q-9wwo7AKpl1ssaegUKsG3Q_MSKpNR0BdjF"/>
+<div class="absolute top-3 left-3">
+<span class="bg-white/90 dark:bg-black/80 backdrop-blur text-slate-900 dark:text-white text-xs font-bold px-3 py-1.5 rounded-md shadow-sm">Technology</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Tech for Good: Scaling Impact</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-3 line-clamp-2">Leveraging AI and IoT to monitor project efficacy in remote locations.</p>
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold">SL</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Sarah Lee</span>
+</div>
+<span class="text-xs text-slate-400 font-mono">Video • 10:42</span>
+</div>
+</article>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        Load More Articles
+                    </button>
+</div>
+</main>
+<!-- Right Column: Sidebar -->
+<aside class="w-full lg:w-80 flex-shrink-0 flex flex-col gap-6">
+<!-- Subscribe Card -->
+<div class="bg-primary rounded-xl p-8 relative overflow-hidden text-white shadow-xl">
+<div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+<div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-32 h-32 bg-black/10 rounded-full blur-xl"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-white">mark_email_unread</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Weekly Intelligence</h3>
+<p class="text-primary-50 text-sm mb-6 leading-relaxed">
+                            Get curated CSR strategies and policy updates delivered to your inbox every Tuesday.
+                        </p>
+<form class="space-y-3">
+<input class="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/60 text-sm focus:outline-none focus:bg-white/20 focus:border-white/40 transition-all" placeholder="work@email.com" type="email"/>
+<button class="w-full py-2.5 bg-white text-primary font-bold text-sm rounded-lg hover:bg-slate-50 transition-colors shadow-sm" type="button">
+                                Subscribe Free
+                            </button>
+</form>
+<p class="text-[10px] text-white/50 mt-4 text-center">No spam, unsubscribe anytime.</p>
+</div>
+</div>
+<!-- Need Help Card -->
+<div class="bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional consultant portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQqs5MzK5DfI4eII4xCRRplTvP-FUr5zeq3_TLD5xenfmgoxLH4HYfqkE5iB37NgKac9hlqgUEZCTeoozJsGYJ6JqySvjgVxCVTwRKW4DMckm6OwLTygC5efb0RtrEC6n75d3QxrLDIVviIRSgT0j8nX15T2V7dIFRhEZHW2UUfUWc5p85vqg1ZnL-LRop55mKh-yxB1E4w0BvXLs4yn8u03iyXsL6Ox5Ky7xjKbKXWBXlFv3bO3fvl0Kkjfk0bNCMrxEGE_K4hSio"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Need guidance?</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Consult with our team</p>
+</div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                        Struggling with compliance or impact assessment? Our experts can help audit your current strategy.
+                    </p>
+<button class="w-full flex items-center justify-center gap-2 py-2 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-primary text-slate-700 dark:text-slate-300 hover:text-primary font-bold text-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+                        Book a Consultation
+                    </button>
+</div>
+<!-- Popular Tags Cloud -->
+<div class="p-4">
+<h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Trending Topics</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Sustainability</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Compliance2024</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#GreenTech</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Education</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors">#Healthcare</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- 5. Bottom Category Tiles -->
+<section class="mt-20 border-t border-slate-200 dark:border-slate-800 pt-10">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Browse by Domain</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group relative h-32 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity" data-alt="Tall corporate glass building" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA83taKxa7Jw-cHJaLdSHqSVPLi6Qzzkzi_IzK8r2VcQnOkbV47_e1JhNSXYOQKakR4vdAderfNrhYOCYQb1LD5o9vjFNhpjMrdc2_aF2pjy80oGHwyqCEc8CwpGwVLwndqr7KHZajvnwJo-hYF3JQ-jDT3KHXlV_8Hfda2IqPwYNDHvO91NJvX87ZLr9PLqmCKXV8ACrpyotwjOfoW7PLckAzTsiuJRQMwQPfgRynCWiqtdRZNEXMKn5XIGw8TDQDZoZ3pNlAGkpSz');"></div>
+<span class="relative z-10 text-white font-bold text-lg group-hover:scale-105 transition-transform">Corporate Responsibility</span>
+</a>
+<a class="group relative h-32 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity" data-alt="Hands holding soil with a small plant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAafJN7YTfMNRAoWM_tJRUOznL1U3MHO3memHwg3YmcQeMNrPVLlvLMjg-YB3fcDaE1NbbapNwLuh9BYhXxlRMEhncWHnmDDig9bSwYlu53P1DNy6STXi6VHxSWuwUIrL5LUmEiOnxbTg_7MmqSxqfOEMS4oYyUaF_VWNALL5NJhrqF7F1zMJdjYfXnfn4TViREqGFRSqZWSccz-ukpagbbATniJ4CXb4v4_hVaHGXcC1deKl87a6LGqKB0tf5-F5KQFj9idGLs2PXU');"></div>
+<span class="relative z-10 text-white font-bold text-lg group-hover:scale-105 transition-transform">Social Development</span>
+</a>
+<a class="group relative h-32 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity" data-alt="Digital globe network connection" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBl1RfVIZY7CvEqoAtH0KwivufRwIxDWAEMTx1771KNlsdobmzBL1wek8cRGOaWsU1q4dh0Kz9BCYnba8-2PzsbO7M9VXADP3g8PRfVTAPf97gjoKTtXyK8rMPmC1MgQNcZo9MfulAhQoItbK4z-xqVtCVnVicxwMh6xlhR-i8j69iVqXKDMW1ePwDKRxdFjyhj_iB5GCFowrCNyrzUO3ILnlVqJqOf5c9mi0AbpkF670fKVlBRrBWvU-4Unqj3x695waofBA3kiqFc');"></div>
+<span class="relative z-10 text-white font-bold text-lg group-hover:scale-105 transition-transform">Monitoring &amp; Evaluation</span>
+</a>
+<a class="group relative h-32 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center" href="#">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity" data-alt="Gavel and books on a table representing law" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBz7H1W0RN5oThwri21-kDqBk0ofoJOQiyZCoh0lxoDyyIly8mBjMoVx87L94bPYWX9XSBloG1ysO_HrDL8J05coMPcqSBfIELGeYMwYeqo-BTnq3IU50OcPbGoG6KrnJ2PQlkJ3BHl04Ee66u_GFdia9viJJPwuhqdjcbMzBvVpKCNDov-FUwcZosz2-t3B3VzEuBPj4sq7cNEP3RLSN-lEJxEqMXR7bSkMNFehSLWiB72v4rkvEOaeryeaqQ_1W0EXl4vpRgZ6n98');"></div>
+<span class="relative z-10 text-white font-bold text-lg group-hover:scale-105 transition-transform">Legal Frameworks</span>
+</a>
+</div>
+</section>
+</div>
+</body></html>

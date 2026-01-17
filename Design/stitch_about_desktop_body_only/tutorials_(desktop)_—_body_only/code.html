@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tutorials - Impexus Consultancy</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b5f6a",
+                        "background-light": "#fafafa",
+                        "background-dark": "#21262c",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c333a",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#374151",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar resource list if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        
+        /* Swiss Design inspired utilities */
+        .swiss-grid-line {
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+        .dark .swiss-grid-line {
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111718] dark:text-[#e0e0e0] font-display min-h-screen antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+<div class="relative w-full max-w-[1440px] mx-auto px-6 py-8 lg:px-12 lg:py-12">
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Sidebar (Sticky) -->
+<aside class="hidden lg:block lg:col-span-3 sticky top-8 space-y-8">
+<!-- CTA Card -->
+<div class="group bg-primary rounded-2xl p-6 text-white shadow-lg shadow-primary/20 relative overflow-hidden">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">school</span>
+</div>
+<div>
+<h3 class="text-xl font-bold leading-tight mb-2">Need personalized guidance?</h3>
+<p class="text-white/80 text-sm leading-relaxed">Our experts can tailor a training session for your team.</p>
+</div>
+<button class="w-full mt-2 bg-white text-primary font-bold py-3 px-4 rounded-xl hover:bg-white/90 transition-colors flex items-center justify-center gap-2 text-sm">
+                            Get Training
+                            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Resources List -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary dark:text-teal-400">folder_open</span>
+<h3 class="font-bold text-base dark:text-white">Quick Resources</h3>
+</div>
+<ul class="flex flex-col gap-4">
+<li>
+<a class="group flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" href="#">
+<div class="mt-1">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-xl">description</span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors">FY24 Compliance Checklist</p>
+<p class="text-xs text-gray-500 mt-0.5">PDF • 2.4 MB</p>
+</div>
+</a>
+</li>
+<div class="swiss-grid-line w-full"></div>
+<li>
+<a class="group flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" href="#">
+<div class="mt-1">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-xl">table_chart</span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors">Impact Assessment Tool</p>
+<p class="text-xs text-gray-500 mt-0.5">XLSX • 1.1 MB</p>
+</div>
+</a>
+</li>
+<div class="swiss-grid-line w-full"></div>
+<li>
+<a class="group flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" href="#">
+<div class="mt-1">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-xl">policy</span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors">CSR Policy Template</p>
+<p class="text-xs text-gray-500 mt-0.5">DOCX • 850 KB</p>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:col-span-9 flex flex-col gap-8">
+<!-- Header -->
+<div class="flex flex-col gap-4 pb-4 border-b border-gray-100 dark:border-gray-800">
+<h1 class="text-4xl lg:text-5xl font-black tracking-tight text-[#111718] dark:text-white">
+                        Tutorials
+                    </h1>
+<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
+                        Master development strategies and CSR compliance with our expert-led guides. Practical knowledge for real-world impact.
+                    </p>
+</div>
+<!-- Filters & Controls -->
+<div class="flex flex-col gap-6">
+<!-- Top Row: Search & Difficulty -->
+<div class="flex flex-col sm:flex-row gap-4">
+<!-- Search Bar -->
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3.5 bg-surface-light dark:bg-surface-dark border-none ring-1 ring-gray-200 dark:ring-gray-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary/50 focus:outline-none transition-shadow shadow-sm" placeholder="Search for topics, keywords..." type="text"/>
+</div>
+<!-- Difficulty Dropdown -->
+<div class="relative min-w-[200px] group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">filter_list</span>
+</div>
+<select class="appearance-none block w-full pl-11 pr-10 py-3.5 bg-surface-light dark:bg-surface-dark border-none ring-1 ring-gray-200 dark:ring-gray-700 rounded-xl text-gray-900 dark:text-white focus:ring-2 focus:ring-primary/50 focus:outline-none cursor-pointer shadow-sm">
+<option disabled="" selected="" value="">Select Difficulty</option>
+<option value="beginner">Beginner</option>
+<option value="intermediate">Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Topic Chips -->
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-md shadow-primary/20 transition-transform hover:-translate-y-0.5 active:translate-y-0">
+                            All Topics
+                        </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-sm font-medium hover:border-primary/50 hover:text-primary dark:hover:text-primary transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-sm">
+                            CSR Strategy
+                        </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-sm font-medium hover:border-primary/50 hover:text-primary dark:hover:text-primary transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-sm">
+                            Compliance
+                        </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-sm font-medium hover:border-primary/50 hover:text-primary dark:hover:text-primary transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-sm">
+                            Field Research
+                        </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-sm font-medium hover:border-primary/50 hover:text-primary dark:hover:text-primary transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-sm">
+                            M&amp;E
+                        </button>
+</div>
+</div>
+<!-- Tutorial Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="group flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-transparent hover:border-primary/20 dark:hover:border-primary/40 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Person writing on a notepad with a laptop nearby" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDb5vBahSeTLBGS4cSedAgIQ4nel3hwVc3AC7PK3FVfWNBSPKvzW1p-CPBYDoS7inJ5RN_yufTTr9CBBFQCRv8qSqNop162h_vBSdx1S4hcueD0gHiKg-JVUW9ZF7xn1pa2HwcTKDdpRkkR5-tsw4I01SGyEz81O9PJxzGpJNEc0c7FOHj6dgCU8ZQD0VDTkCRYjARzqZNOrpR6-DVJ7O0RNVn9GHkGlIbdPhkfyUu9XMLVWJbsx1AXG5pyYE9s2_dwFW2iEByTcMKs');">
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="bg-white/95 dark:bg-gray-900/95 backdrop-blur px-2.5 py-1 rounded-md text-xs font-bold text-gray-800 dark:text-white flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">play_circle</span>
+                                    Video available
+                                </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-[11px] font-bold uppercase tracking-wider">Beginner</span>
+<span class="text-xs text-gray-400">12 min read</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                                Drafting a CSR Policy
+                            </h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                                A step-by-step guide to creating a compliant and effective Corporate Social Responsibility policy document.
+                            </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Outcome: Learn the legal framework</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-transparent hover:border-primary/20 dark:hover:border-primary/40 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Colleagues discussing charts and data in a bright meeting room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGHVFTdQ7FGRTnLABKL8OmBO7VYJ8euq7YSmOzFVU_EpD9FAaN3LVl2leWDYygeqGjl7Um0pgUPj29R9kLWgx9yL1vhZKPD4K5q8DRU56-6luKFr4YMsDKtomWGVvlZE7Hepyr9Jx88TfpT3ViYTfHzh-W1EvLycKCOiy8-3LMtuyAVm-FO-YOMoVXoDxO1c7UrvizrKpZk80x9F6Yd1ZnRsECuoa0htoGIDHIMuGMQn4wZ5TbY-IO1x44L4QQk7EXDQrmM_mD92TO');">
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="bg-white/95 dark:bg-gray-900/95 backdrop-blur px-2.5 py-1 rounded-md text-xs font-bold text-gray-800 dark:text-white flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">play_circle</span>
+                                    Video available
+                                </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-[11px] font-bold uppercase tracking-wider">Advanced</span>
+<span class="text-xs text-gray-400">45 min video</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                                Social Audit Walkthrough
+                            </h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                                Deep dive into conducting field audits. Learn to identify red flags and verify beneficiary data accurately.
+                            </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Outcome: Conduct effective audits</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-transparent hover:border-primary/20 dark:hover:border-primary/40 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Digital graphs and analytics dashboard on a screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIl3XZPn3arDkDUoMtJJe6e927opzfJ7XkCJopBUiqQuXW6ey5FwGbYv9SHjU2-16YyWN6NN-z3u0zVcWiNZpCPL3_8UdGQLVM1wQ2iNMvMz5ETU90A2y_jDV7Ic3oFQ_Jp2TtYX9wqr9_G0-z2iSYk_xT2wgrKO_qfnIv-_wmu8kXw5ITcuPga3r4QqwVv4x3Z58nYNBPcr1HXFDSmOxiZBoNU8bU5IlOJuXGWyDTceCHSn17cK2gNGvK85FNOroHYbcyM6dtkG6Y');">
+</div>
+</div>
+<div class="flex flex-col flex-grow p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-[11px] font-bold uppercase tracking-wider">Intermediate</span>
+<span class="text-xs text-gray-400">20 min read</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                                Impact Assessment 101
+                            </h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                                Moving beyond outputs to outcomes. Frameworks for measuring the long-term change of your interventions.
+                            </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Outcome: Measure real change</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-transparent hover:border-primary/20 dark:hover:border-primary/40 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Accounting ledger and calculator on a desk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD27g1-64e_meVpmseB65mzbzU_PkexQjKlMBr8NKZS8GqdUsCFgXVUK1ovSAsyWhpDkMAGkjxGfjehZ4PwbqDcS-1hEjKvm5_0APV9E4FlaLTblrMfbFKg2B_PjdCm2YnthFgzZrpbLAaQFIvjlZmWk1jgi3bL8q6TJZNFnabnxUHg6lE45xBEMoGWvFp7KvTE282xMHwHHEriQaE5mA1YiAzYE287kzcWXX-iDGx71kvnWQ1z8yzr6kL0hBpJkVT1h40-VOZpd_ff');">
+</div>
+</div>
+<div class="flex flex-col flex-grow p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-[11px] font-bold uppercase tracking-wider">Advanced</span>
+<span class="text-xs text-gray-400">35 min read</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                                Reporting Standards
+                            </h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                                Understanding GRI, SASB, and BRSR frameworks. How to structure your annual CSR report for stakeholders.
+                            </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Outcome: Global compliance</span>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="group flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-transparent hover:border-primary/20 dark:hover:border-primary/40 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Group of diverse people holding hands in a circle top view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfS1lUaq_TQbOGku-pHlvctHyO3vm4AYJYx83MKERi6CbfSFcX44gHbvWDcnD50s3Ub4CuVcfKdYYYHCt1khlzQ8tXc_cxaa0a-TQgWy9PO1YJ1xPmasqqWJ-SdT54B3Di_tMh4Ln4i07NTy_iagzg4JZM8nqASfGypGK2I31awCYnOKXv0XDLu3N-I1H67x6qiulSJact2WPhI6rmcH1YtNuRMwXJR6pRSQtUZg1k00DgOwEfuJwRGVNhKQqAyflVxTTZJVAddUcm');">
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="bg-white/95 dark:bg-gray-900/95 backdrop-blur px-2.5 py-1 rounded-md text-xs font-bold text-gray-800 dark:text-white flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">play_circle</span>
+                                    Video available
+                                </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-[11px] font-bold uppercase tracking-wider">Beginner</span>
+<span class="text-xs text-gray-400">15 min video</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                                Community Engagement
+                            </h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                                Strategies for entering new communities, building trust with local leaders, and ensuring participatory development.
+                            </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Outcome: Build trust</span>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="group flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-transparent hover:border-primary/20 dark:hover:border-primary/40 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Sticky notes on a glass wall for brainstorming" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ5x5RbwMrm6OBZX_9F2i0gczk90SgLrTgq6mFxh-_SbMvJyDR_K--CpWRcsYNN8rtFZegJkTVBmA91-WiG3PNkEXT7rQv_i9N9VOfnDhfjVbMFgD4sXwKUIyZzMa5KvtRDPAqiFll8unk4fefZkH3PiLjWsbE1USloAoDQdXFcpXgsIca98gGIPqImBp8YLdJ71Axzaz8YGmYzt_zrqNrBmGPI0bsj11Rb_nnanspedZpqD_4xxmyvTVfdt_8XjAbGKrVvOFAyzmR');">
+</div>
+</div>
+<div class="flex flex-col flex-grow p-5">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-[11px] font-bold uppercase tracking-wider">Intermediate</span>
+<span class="text-xs text-gray-400">18 min read</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                                Stakeholder Mapping
+                            </h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                                How to identify and prioritize key players in your project ecosystem. Power-Interest grids explained.
+                            </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Outcome: Identify key players</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination / Load More -->
+<div class="flex justify-center mt-8">
+<button class="flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 font-semibold text-sm transition-colors">
+                        Load more tutorials
+                        <span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Sheet CTA (Visible only on small screens) -->
+<div class="lg:hidden fixed bottom-6 left-6 right-6 z-50">
+<div class="bg-primary text-white rounded-xl p-4 shadow-xl flex items-center justify-between">
+<div>
+<p class="font-bold text-sm">Need personalized guidance?</p>
+<p class="text-xs opacity-80">Book a training session.</p>
+</div>
+<button class="bg-white text-primary text-xs font-bold py-2 px-3 rounded-lg hover:bg-white/90">
+                    Get Training
+                </button>
+</div>
+</div>
+</div>
+</body></html>

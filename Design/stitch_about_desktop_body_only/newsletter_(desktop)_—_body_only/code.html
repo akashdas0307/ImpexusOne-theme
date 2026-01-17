@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impexus Newsletter</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b5f6a",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 12px rgba(0, 0, 0, 0.04)",
+                        "hover": "0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#212121] dark:text-gray-100 antialiased min-h-screen flex flex-col items-center selection:bg-primary/20 selection:text-primary">
+<!-- Main Container -->
+<main class="w-full max-w-[960px] px-6 py-12 md:py-20 flex flex-col gap-16 md:gap-24">
+<!-- 1. Hero Section -->
+<section class="text-center flex flex-col items-center gap-6 animate-fade-in-up">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Monthly Insights
+            </div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#111718] dark:text-white leading-[1.05]">
+                Impexus Newsletter
+            </h1>
+<p class="text-lg md:text-xl text-[#424242] dark:text-gray-400 max-w-2xl leading-relaxed">
+                Expert insights on sustainable development, CSR strategies, and impact measurement for the modern professional.
+            </p>
+</section>
+<!-- 2. Subscribe Block (Floating Card) -->
+<section class="w-full group">
+<div class="relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark shadow-soft hover:shadow-hover transition-shadow duration-500 p-8 md:p-12 border border-gray-100 dark:border-gray-800">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl pointer-events-none opacity-60"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+<div class="flex-1 text-center lg:text-left space-y-2">
+<h2 class="text-2xl md:text-3xl font-bold text-[#111718] dark:text-white tracking-tight">
+                            Join 5,000+ development professionals
+                        </h2>
+<p class="text-[#638488] dark:text-gray-400 text-base">
+                            Curated intelligence for your inbox. No fluff, just impact.
+                        </p>
+</div>
+<div class="w-full lg:max-w-[420px]">
+<form class="flex flex-col gap-3" onsubmit="event.preventDefault();">
+<div class="relative flex items-center">
+<span class="absolute left-4 text-gray-400 material-symbols-outlined text-[20px]">mail</span>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-[#111718] dark:text-white placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary h-14 pl-11 pr-32 transition-all outline-none" placeholder="work@email.com" required="" type="email"/>
+<button class="absolute right-1.5 top-1.5 bottom-1.5 px-5 rounded-md bg-primary hover:bg-primary/90 text-white font-bold text-sm transition-colors shadow-sm whitespace-nowrap" type="submit">
+                                    Subscribe
+                                </button>
+</div>
+<p class="text-xs text-center lg:text-left text-gray-400 dark:text-gray-500 pl-1">
+                                We respect your inbox. Unsubscribe anytime.
+                            </p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Latest Issue (Featured Card) -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h2 class="text-xl font-bold tracking-tight text-[#111718] dark:text-white">Latest Issue</h2>
+</div>
+<span class="text-sm font-semibold text-primary">Vol. 42</span>
+</div>
+<article class="group relative flex flex-col md:flex-row overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark shadow-soft hover:shadow-hover transition-all duration-300 border border-gray-100 dark:border-gray-800">
+<div class="w-full md:w-5/12 aspect-video md:aspect-auto relative overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern office building glass facade representing corporate structure and sustainability" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRHERsre7nm54TOdaByogx75CbYJgkoZUW1wrJPL4TEzETrMHPFKCcDCiWG0qwVi3O7pSmw-vz0QA6dilpImM32plofCthJwu1h5g2iX053IWv8eNRG4dGFANzsHW8hdBQW0QRgb9OFrFJ4fHIVDJ-nJOCpN5b-kpPC88JYkkPyDDJN3_XXQDivW0sNYCRRRjHMZMoTbcoE4RuwVddoT8h26mmja_hLugZh68zNV8FjLPsmRZDpaO4sMeJESdgdc5eeyiTy_zDgAP8');">
+</div>
+<!-- Date Badge -->
+<div class="absolute top-4 left-4 bg-white/95 dark:bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider shadow-sm border border-black/5 dark:border-white/10">
+                        Oct 2023
+                    </div>
+</div>
+<div class="flex-1 p-8 lg:p-10 flex flex-col justify-center gap-6">
+<div class="space-y-3">
+<h3 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#111718] dark:text-white leading-tight">
+                            The Future of Corporate Social Responsibility in 2024
+                        </h3>
+<p class="text-[#424242] dark:text-gray-300 text-base leading-relaxed line-clamp-3">
+                            We explore emerging ESG trends, the new wave of impact measurement across the global south, and how corporations are adapting to increasingly strict compliance frameworks in developing markets.
+                        </p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline underline-offset-4 decoration-2 transition-all group-hover:gap-3" href="#">
+                            Read Full Issue <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+</section>
+<!-- 4. Issue Archive (List of cards) -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 pb-3">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+<h2 class="text-xl font-bold tracking-tight text-[#111718] dark:text-white">Issue Archive</h2>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Archive Item 1 -->
+<div class="relative p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-primary/30 transition-all shadow-soft hover:shadow-md group cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-widest font-mono">Sep 2023</span>
+<span class="h-1 w-1 rounded-full bg-gray-300"></span>
+<span class="text-xs font-medium text-primary bg-primary/5 border border-primary/20 px-2 py-0.5 rounded">Impact</span>
+</div>
+<h3 class="text-xl font-bold text-[#111718] dark:text-white group-hover:text-primary transition-colors">
+                                Measuring Impact in Rural Sectors
+                            </h3>
+<ul class="flex flex-col gap-2 text-sm text-[#424242] dark:text-gray-400 pl-1">
+<li class="flex items-start gap-2.5">
+<span class="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary block shrink-0"></span>
+<span>Implementing advanced data collection methodologies for remote areas.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary block shrink-0"></span>
+<span>Strategies for stakeholder engagement that build genuine trust.</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center justify-end md:self-center shrink-0">
+<div class="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Archive Item 2 -->
+<div class="relative p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-primary/30 transition-all shadow-soft hover:shadow-md group cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-gray-500 uppercase tracking-widest font-mono">Aug 2023</span>
+<span class="h-1 w-1 rounded-full bg-gray-300"></span>
+<span class="text-xs font-medium text-primary bg-primary/5 border border-primary/20 px-2 py-0.5 rounded">Compliance</span>
+</div>
+<h3 class="text-xl font-bold text-[#111718] dark:text-white group-hover:text-primary transition-colors">
+                                CSR Compliance Updates Q3
+                            </h3>
+<ul class="flex flex-col gap-2 text-sm text-[#424242] dark:text-gray-400 pl-1">
+<li class="flex items-start gap-2.5">
+<span class="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary block shrink-0"></span>
+<span>New legal frameworks affecting international NGOs operating in Asia.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary block shrink-0"></span>
+<span>Standardizing reporting protocols for complex cross-border initiatives.</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center justify-end md:self-center shrink-0">
+<div class="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-sm font-bold text-gray-500 hover:text-primary border border-dashed border-gray-300 dark:border-gray-700 hover:border-primary rounded-xl transition-all flex items-center justify-center gap-2 group">
+<span class="group-hover:translate-y-0.5 transition-transform material-symbols-outlined text-lg">expand_more</span>
+                Load Previous Issues
+            </button>
+</section>
+<!-- 5. Monthly Roundup (Grid) -->
+<section class="flex flex-col gap-6 pb-12">
+<div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 pb-3">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+<h2 class="text-xl font-bold tracking-tight text-[#111718] dark:text-white">Quick Reads Roundup</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Tile 1 -->
+<a class="group flex flex-col h-full overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-soft hover:shadow-hover border border-gray-100 dark:border-gray-800 transition-all hover:-translate-y-1" href="#">
+<div class="h-36 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract business chart analysis concept for policy brief" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgLTFdLLxAF48fGrZwR7vPYwD8Cu0VtKV1JhmFs5TRDhkCo-detTtgTWStwx17ExX224jQ2o6yUAksxdcb_xkye2Z8niawlPIWPkKVktDwybo5sK6gEBeWt6mDHlg79PjVFKUamS4jfbIr4oJH4S1U2IQQ1JqmH5tw52oontJqGHq3tsqwgLinoyQJUJI_v3tibXhLkgos3X24dIsjVtrpPmRnaQYmmmMR-SsmKAtDVkAtu0uLMHi6uD1rVwGry1rf7fdyulhbifpO');"></div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-[10px] font-bold uppercase text-primary tracking-wider">Policy Brief</span>
+<h4 class="text-base font-bold text-[#111718] dark:text-white leading-snug group-hover:text-primary transition-colors">
+                            Navigating the new 2024 Environmental Protocols
+                        </h4>
+<div class="mt-auto pt-4 flex items-center text-xs font-bold text-gray-400 group-hover:text-primary transition-colors">
+                            Read Brief <span class="material-symbols-outlined text-[16px] ml-1 group-hover:ml-1.5 transition-all">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Tile 2 -->
+<a class="group flex flex-col h-full overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-soft hover:shadow-hover border border-gray-100 dark:border-gray-800 transition-all hover:-translate-y-1" href="#">
+<div class="h-36 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Group of diverse professionals in a meeting discussing micro-finance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIbE2M5jcpW2KaKzLOqTrDBjS2qUBV5mu8vBU0OG0hd2ToapHJ3KQMrxSvrf84FisQdsc4rcHZ_4BzfOTM5zmDpdrIW011SpYjTmjGgReZearxh34PW4rDsSY2s079aoZaTPzPWgyOeXAoPZu2NISh6LYNqslm6rx9dC3OZBv9YSsO6Zg09tpstT3LdL8JycDPPHtrHBiEqs90Ap6JUIZTCcApNdrC8jNzsBKizBowA5lgjxoHND3KBeWFFaAjurlADkw7bT4QrH04');"></div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-[10px] font-bold uppercase text-primary tracking-wider">Case Study</span>
+<h4 class="text-base font-bold text-[#111718] dark:text-white leading-snug group-hover:text-primary transition-colors">
+                            Success stories: Micro-financing in South East Asia
+                        </h4>
+<div class="mt-auto pt-4 flex items-center text-xs font-bold text-gray-400 group-hover:text-primary transition-colors">
+                            View Study <span class="material-symbols-outlined text-[16px] ml-1 group-hover:ml-1.5 transition-all">arrow_forward</span>
+</div>
+</div>
+</a>
+<!-- Tile 3 -->
+<a class="group flex flex-col h-full overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-soft hover:shadow-hover border border-gray-100 dark:border-gray-800 transition-all hover:-translate-y-1" href="#">
+<div class="h-36 w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Gavel and books representing legal industry news updates" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqWR_t-G_IeocViBem92FlUppbRVvugvqnMeIvCsG1KlbDIMFX8V0t5KnCWnzURfGsK3zV-xhjqWkt_Jw7Ezk1sx-wI5DQKLAlA8MfOPNldYHV8bo00S1cVp2PUFZtqI5aQiuV49ApJYRHWfQSF3h7pg7qrSATFWEj4gP_ovcvJz4W7T9hPw_nhlZ-fmbG-stlTkY9fC4oYvgoJZ9go43OBak8OzWNp6BvUtMrfSFALjxIwbonVvML4MK6CcithVUO7y1R84RRDQry');"></div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-2">
+<span class="text-[10px] font-bold uppercase text-primary tracking-wider">Industry News</span>
+<h4 class="text-base font-bold text-[#111718] dark:text-white leading-snug group-hover:text-primary transition-colors">
+                            Global Summit Outcomes: What you need to know
+                        </h4>
+<div class="mt-auto pt-4 flex items-center text-xs font-bold text-gray-400 group-hover:text-primary transition-colors">
+                            Read News <span class="material-symbols-outlined text-[16px] ml-1 group-hover:ml-1.5 transition-all">arrow_forward</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+</main>
+</body></html>

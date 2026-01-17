@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tip / Trick Post Template</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f766d",
+                        "background-light": "#fdfdfc",
+                        "background-dark": "#1a273c",
+                        "accent-warning": "#DC5A46", // Terracotta for warnings
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for checklist if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col">
+<!-- Main Layout Container -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+<!-- Left Column: Main Content (Narrow Focus) -->
+<article class="lg:col-span-8 flex flex-col gap-8">
+<!-- 1. Top Zone -->
+<header class="flex flex-col gap-6 border-b border-gray-200 dark:border-gray-700 pb-8">
+<!-- Badge -->
+<div class="flex">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+                            Tips &amp; Tricks
+                        </span>
+</div>
+<!-- Headline -->
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                        Streamlining Vendor Onboarding Workflows
+                    </h1>
+<!-- Excerpt -->
+<p class="text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl">
+                        Reduce administrative drag and improve compliance by simplifying how you bring new partners into your ecosystem.
+                    </p>
+<!-- Meta Row -->
+<div class="flex items-center gap-4 mt-2">
+<div class="h-10 w-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-gray-800" data-alt="Portrait of Sarah Jenkins, the author" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJ15fxXMulnAL8_i-qdw1gFAjU1Cl7hVVJIWeH5Xfp3MJw178wPn7t9CG_mRapc-GgtiS5yXVK79J0GnVUZwjSSexLfgGyQdAg4vcZ570ZtRCxUCmKMz3WFcfBegkhVc0UMU0FlPMX3EJjOdbfuMBDawZtbOsiyKdPevPsQQeuaEIJ4nNlOLSanX0WJIKPXD-9vCoMcSETqzTKDV9GBaRefgNogb-QKg77olTbIfYt5Ia6PXpupaO3J0zZZygBfzAEr4nHq5m2_7DR');"></div>
+<div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 text-sm">
+<span class="font-bold text-slate-900 dark:text-white">Sarah Jenkins</span>
+<span class="hidden sm:inline text-gray-300 dark:text-gray-600">•</span>
+<span class="text-slate-500 dark:text-slate-400">Oct 24, 2023</span>
+<span class="hidden sm:inline text-gray-300 dark:text-gray-600">•</span>
+<span class="text-slate-500 dark:text-slate-400">5 min read</span>
+</div>
+</div>
+</header>
+<!-- 2. Highlight Box: Quick Takeaway -->
+<div class="bg-white dark:bg-gray-800 rounded-r-xl border-l-4 border-primary shadow-sm p-6 my-2">
+<div class="flex gap-4 items-start">
+<div class="p-2 bg-primary/10 rounded-lg shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">bolt</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Quick Takeaway</h3>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Automating the initial data collection phase can reduce onboarding time by 40% while simultaneously reducing human error in data entry.
+                            </p>
+</div>
+</div>
+</div>
+<!-- 3. Content Body -->
+<div class="prose prose-lg dark:prose-invert prose-headings:font-display prose-headings:font-bold prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-li:text-slate-600 dark:prose-li:text-slate-300 max-w-none">
+<!-- The Problem -->
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">The Problem</h2>
+<p class="mb-8">
+                        Most consultancy firms struggle with a fragmented onboarding process. It usually starts with a handshake, followed by a chaotic sequence of email threads, PDF attachments, and chasing signatures. This manual friction doesn't just annoy your new partners—it creates compliance blind spots where critical documents like NDAs or insurance certificates can easily slip through the cracks.
+                    </p>
+<!-- The Fix -->
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">The Fix</h2>
+<ul class="space-y-4 mb-10 list-none pl-0">
+<li class="flex gap-4 items-start group">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold shrink-0 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">1</span>
+<div>
+<strong class="block text-slate-900 dark:text-white mb-1">Centralize Documentation</strong>
+<span class="text-base">Move away from email attachments. Create a secure, shared portal where vendors upload their own documents directly into your ecosystem.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start group">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold shrink-0 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">2</span>
+<div>
+<strong class="block text-slate-900 dark:text-white mb-1">Automate Approval Triggers</strong>
+<span class="text-base">Set up logic rules. If a vendor is high-risk, route to Legal automatically. If low-risk, fast-track to the Project Manager.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start group">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold shrink-0 mt-0.5 group-hover:bg-primary group-hover:text-white transition-colors">3</span>
+<div>
+<strong class="block text-slate-900 dark:text-white mb-1">Standardize Contracts</strong>
+<span class="text-base">Use modular contract templates that can be assembled dynamically based on the vendor type, reducing legal drafting time.</span>
+</div>
+</li>
+</ul>
+<!-- Checklist Card -->
+<div class="not-prose my-10">
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+<div class="bg-slate-50 dark:bg-gray-900/50 px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">checklist</span>
+                                    Onboarding Checklist
+                                </h3>
+<button class="text-xs font-semibold text-primary hover:text-primary/80 uppercase tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                                    Copy
+                                </button>
+</div>
+<div class="p-4 space-y-1">
+<label class="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Collect W-9 / Tax ID forms</span>
+</label>
+<label class="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Verify Insurance Certificates (COI)</span>
+</label>
+<label class="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Sign Non-Disclosure Agreement (NDA)</span>
+</label>
+<label class="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Define Payment Terms &amp; Details</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Common Mistakes -->
+<div class="not-prose mt-12 bg-[#DC5A46]/5 dark:bg-[#DC5A46]/10 border-l-4 border-accent-warning rounded-r-lg p-6">
+<div class="flex gap-4">
+<div class="bg-accent-warning/20 p-2 rounded-full h-fit text-accent-warning">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<h3 class="font-bold text-accent-warning text-lg mb-2">Common Mistake: Skipping the Audit</h3>
+<p class="text-slate-700 dark:text-slate-300">
+                                    Don't skip the tax compliance check just to speed up the start date. Retroactively fixing vendor tax classification errors can cost 3x more administrative time than doing it correctly upfront.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. Bottom: Related Content & CTA -->
+<div class="mt-8 pt-10 border-t border-gray-200 dark:border-gray-700">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Up Next</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Related Card 1 -->
+<a class="group block relative rounded-xl overflow-hidden aspect-video bg-gray-100" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract visualization of contract negotiation" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsTcgVzz9ii9yH_5F4oBUSQE0tD86A2Nb5I1CYd7vf8EtnXefLiU5WwQd4bQkzR6TQAnazmnFYCKvVBnebQZOGbEWuDoSlaM52uZmc2Qate9b0dyTXcEL2UP-x3xeRuMpkX0u5qA5Qe6V77Rp7fkhoHqGIevhYUhdMYipodrmjPljubdjN5S4ZTaqTasnKKfm0cTVWXAOWmDHGvsSs1IQeso-I930uLJ0cQXwmzkO9aSpuEQ5ha38wsu9jRC812SYBoHsJVXckp67t');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<span class="text-xs font-bold text-white/80 uppercase tracking-wider mb-1 block">Strategy</span>
+<h4 class="text-white font-bold text-lg leading-tight group-hover:underline decoration-primary decoration-2 underline-offset-4">Contract Negotiation Tactics</h4>
+</div>
+</a>
+<!-- CTA Card -->
+<div class="rounded-xl bg-primary text-white p-6 flex flex-col justify-center items-start text-left relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<h4 class="text-xl font-bold mb-2 relative z-10">Need expert help?</h4>
+<p class="text-white/80 text-sm mb-6 leading-relaxed relative z-10">
+                                Our consultants can audit your current vendor workflows in less than 2 weeks.
+                            </p>
+<button class="bg-white text-primary font-bold py-2.5 px-5 rounded-lg text-sm hover:bg-gray-50 transition-colors shadow-lg relative z-10 flex items-center gap-2">
+                                Book a Consultation
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Right Column: Sticky Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="sticky top-8 space-y-8">
+<!-- Subscribe Card -->
+<div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="mb-4">
+<div class="h-10 w-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">Weekly Consultancy Tips</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Join 12,000+ consultants improving their operations.</p>
+</div>
+<form class="space-y-3" onsubmit="event.preventDefault();">
+<div>
+<label class="sr-only" for="email">Email address</label>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-sm focus:ring-primary focus:border-primary px-3 py-2.5" id="email" placeholder="work@email.com" type="email"/>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg text-sm transition-colors shadow-md shadow-primary/20" type="submit">
+                                Subscribe
+                            </button>
+</form>
+<p class="text-xs text-center text-gray-400 dark:text-gray-500 mt-3">No spam, unsubscribe anytime.</p>
+</div>
+<!-- Explore Related Tips -->
+<div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+<h3 class="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">explore</span>
+                            Explore Related
+                        </h3>
+<nav class="flex flex-col space-y-0">
+<a class="group flex items-start gap-3 py-3 border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/30 -mx-2 px-2 rounded-lg transition-colors" href="#">
+<span class="mt-1 text-gray-400 group-hover:text-primary transition-colors material-symbols-outlined text-[18px]">arrow_right</span>
+<div>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-primary block leading-tight">Supply Chain Audits 101</span>
+<span class="text-xs text-gray-400 mt-0.5 block">3 min read</span>
+</div>
+</a>
+<a class="group flex items-start gap-3 py-3 border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/30 -mx-2 px-2 rounded-lg transition-colors" href="#">
+<span class="mt-1 text-gray-400 group-hover:text-primary transition-colors material-symbols-outlined text-[18px]">arrow_right</span>
+<div>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-primary block leading-tight">Vendor Risk Assessment</span>
+<span class="text-xs text-gray-400 mt-0.5 block">6 min read</span>
+</div>
+</a>
+<a class="group flex items-start gap-3 py-3 border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/30 -mx-2 px-2 rounded-lg transition-colors" href="#">
+<span class="mt-1 text-gray-400 group-hover:text-primary transition-colors material-symbols-outlined text-[18px]">arrow_right</span>
+<div>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-primary block leading-tight">Digital Signature Tools</span>
+<span class="text-xs text-gray-400 mt-0.5 block">4 min read</span>
+</div>
+</a>
+<a class="group flex items-start gap-3 py-3 border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/30 -mx-2 px-2 rounded-lg transition-colors" href="#">
+<span class="mt-1 text-gray-400 group-hover:text-primary transition-colors material-symbols-outlined text-[18px]">arrow_right</span>
+<div>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-primary block leading-tight">Procurement Ethics</span>
+<span class="text-xs text-gray-400 mt-0.5 block">7 min read</span>
+</div>
+</a>
+</nav>
+<a class="inline-block mt-4 text-sm font-bold text-primary hover:text-primary/80 transition-colors" href="#">
+                            View all topics →
+                        </a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>
