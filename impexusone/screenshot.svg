@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b606b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#07464e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect width="1200" height="80" fill="#ffffff"/>
+  <rect x="40" y="25" width="120" height="30" rx="4" fill="#0b606b"/>
+  <text x="100" y="46" fill="#ffffff" font-family="sans-serif" font-size="14" text-anchor="middle">IMPEXUS</text>
+  
+  <!-- Nav items -->
+  <text x="240" y="46" fill="#374151" font-family="sans-serif" font-size="14">Home</text>
+  <text x="320" y="46" fill="#374151" font-family="sans-serif" font-size="14">Services</text>
+  <text x="410" y="46" fill="#374151" font-family="sans-serif" font-size="14">About</text>
+  <text x="490" y="46" fill="#374151" font-family="sans-serif" font-size="14">Insights</text>
+  <text x="580" y="46" fill="#374151" font-family="sans-serif" font-size="14">Contact</text>
+  
+  <!-- CTA Button -->
+  <rect x="1020" y="22" width="140" height="36" rx="6" fill="#0b606b"/>
+  <text x="1090" y="46" fill="#ffffff" font-family="sans-serif" font-size="13" text-anchor="middle">Book a Call</text>
+  
+  <!-- Hero Section -->
+  <rect y="80" width="1200" height="320" fill="url(#heroGrad)"/>
+  
+  <!-- Hero Content -->
+  <text x="600" y="180" fill="#ffffff" font-family="sans-serif" font-size="36" font-weight="bold" text-anchor="middle">Elevating Development Impact</text>
+  <text x="600" y="220" fill="#ffffff" font-family="sans-serif" font-size="36" font-weight="bold" text-anchor="middle">Through Evidence &amp; Expertise</text>
+  <text x="600" y="270" fill="rgba(255,255,255,0.9)" font-family="sans-serif" font-size="16" text-anchor="middle">Strategic consulting for CSR initiatives and development projects.</text>
+  
+  <!-- Hero Buttons -->
+  <rect x="430" y="300" width="160" height="44" rx="6" fill="#ffffff"/>
+  <text x="510" y="328" fill="#0b606b" font-family="sans-serif" font-size="14" text-anchor="middle">Explore Services</text>
+  <rect x="610" y="300" width="160" height="44" rx="6" fill="transparent" stroke="#ffffff" stroke-width="2"/>
+  <text x="690" y="328" fill="#ffffff" font-family="sans-serif" font-size="14" text-anchor="middle">Book Consultation</text>
+  
+  <!-- Trust Pillars -->
+  <rect y="400" width="1200" height="140" fill="#ffffff"/>
+  
+  <!-- Pillar 1 -->
+  <rect x="100" y="420" width="300" height="100" rx="8" fill="#f8fafc"/>
+  <circle cx="150" cy="470" r="24" fill="#e0f2fe"/>
+  <text x="190" y="460" fill="#0b606b" font-family="sans-serif" font-size="16" font-weight="bold">Field Reality</text>
+  <text x="190" y="485" fill="#6b7280" font-family="sans-serif" font-size="12">Deep understanding of</text>
+  <text x="190" y="500" fill="#6b7280" font-family="sans-serif" font-size="12">ground-level challenges</text>
+  
+  <!-- Pillar 2 -->
+  <rect x="450" y="420" width="300" height="100" rx="8" fill="#f8fafc"/>
+  <circle cx="500" cy="470" r="24" fill="#fef3c7"/>
+  <text x="540" y="460" fill="#0b606b" font-family="sans-serif" font-size="16" font-weight="bold">Evidence &amp; Data</text>
+  <text x="540" y="485" fill="#6b7280" font-family="sans-serif" font-size="12">Rigorous research for</text>
+  <text x="540" y="500" fill="#6b7280" font-family="sans-serif" font-size="12">informed decisions</text>
+  
+  <!-- Pillar 3 -->
+  <rect x="800" y="420" width="300" height="100" rx="8" fill="#f8fafc"/>
+  <circle cx="850" cy="470" r="24" fill="#dcfce7"/>
+  <text x="890" y="460" fill="#0b606b" font-family="sans-serif" font-size="16" font-weight="bold">Strong Documentation</text>
+  <text x="890" y="485" fill="#6b7280" font-family="sans-serif" font-size="12">Compelling narratives for</text>
+  <text x="890" y="500" fill="#6b7280" font-family="sans-serif" font-size="12">stakeholder communication</text>
+  
+  <!-- Services Section -->
+  <rect y="540" width="1200" height="360" fill="#f1f5f9"/>
+  
+  <text x="600" y="590" fill="#0b606b" font-family="sans-serif" font-size="12" text-anchor="middle">WHAT WE DO</text>
+  <text x="600" y="620" fill="#111827" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle">Comprehensive Consulting Services</text>
+  
+  <!-- Service Cards Row -->
+  <!-- Card 1 -->
+  <rect x="60" y="660" width="340" height="100" rx="8" fill="#ffffff"/>
+  <circle cx="100" cy="710" r="20" fill="#0b606b"/>
+  <text x="135" y="695" fill="#111827" font-family="sans-serif" font-size="14" font-weight="bold">Proposal Development</text>
+  <text x="135" y="715" fill="#6b7280" font-family="sans-serif" font-size="11">Compelling, evidence-backed</text>
+  <text x="135" y="730" fill="#6b7280" font-family="sans-serif" font-size="11">proposals with high win rates</text>
+  
+  <!-- Card 2 -->
+  <rect x="430" y="660" width="340" height="100" rx="8" fill="#ffffff"/>
+  <circle cx="470" cy="710" r="20" fill="#d97706"/>
+  <text x="505" y="695" fill="#111827" font-family="sans-serif" font-size="14" font-weight="bold">M&amp;E Systems</text>
+  <text x="505" y="715" fill="#6b7280" font-family="sans-serif" font-size="11">Clear metrics and dashboards</text>
+  <text x="505" y="730" fill="#6b7280" font-family="sans-serif" font-size="11">for real-time monitoring</text>
+  
+  <!-- Card 3 -->
+  <rect x="800" y="660" width="340" height="100" rx="8" fill="#ffffff"/>
+  <circle cx="840" cy="710" r="20" fill="#15803d"/>
+  <text x="875" y="695" fill="#111827" font-family="sans-serif" font-size="14" font-weight="bold">Capacity Building</text>
+  <text x="875" y="715" fill="#6b7280" font-family="sans-serif" font-size="11">Empowered teams with</text>
+  <text x="875" y="730" fill="#6b7280" font-family="sans-serif" font-size="11">practical skills and tools</text>
+  
+  <!-- View All Button -->
+  <rect x="515" y="800" width="170" height="40" rx="6" fill="transparent" stroke="#0b606b" stroke-width="2"/>
+  <text x="600" y="826" fill="#0b606b" font-family="sans-serif" font-size="13" text-anchor="middle">View All Services</text>
+</svg>
