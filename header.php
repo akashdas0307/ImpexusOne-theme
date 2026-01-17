@@ -30,8 +30,9 @@
                 <div class="site-title-group">
                     <span class="site-title"><?php bloginfo('name'); ?></span>
                     <?php 
+                    $show_tagline = get_theme_mod('show_tagline', true);
                     $description = get_bloginfo('description', 'display');
-                    if ($description) : ?>
+                    if ($description && $show_tagline) : ?>
                         <span class="site-tagline"><?php echo esc_html($description); ?></span>
                     <?php endif; ?>
                 </div>
@@ -60,6 +61,7 @@
                 </button>
 
                 <!-- Social Icons -->
+                <?php if (get_theme_mod('show_header_social', true)) : ?>
                 <div class="header-social">
                     <a href="https://linkedin.com/company/impexus" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="<?php esc_attr_e('LinkedIn', 'impexusone'); ?>">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -72,6 +74,7 @@
                         </svg>
                     </a>
                 </div>
+                <?php endif; ?>
 
                 <!-- CTA Button -->
                 <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-primary header-cta">
