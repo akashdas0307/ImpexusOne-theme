@@ -230,13 +230,17 @@ $social_instagram = get_theme_mod('social_instagram_url', '');
 <!-- Search Modal (for modal search type) -->
 <?php if ($show_header_search && $search_type === 'modal') : ?>
 <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
-    <button type="button" class="search-modal-close" id="search-modal-close" aria-label="<?php esc_attr_e('Close search', 'impexusone'); ?>">&times;</button>
-    <div class="search-modal-content">
-        <h2 id="search-modal-title" class="sr-only"><?php esc_html_e('Search', 'impexusone'); ?></h2>
-        <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search-modal-form">
-            <input type="search" name="s" class="search-modal-input" placeholder="<?php echo esc_attr($search_placeholder); ?>" aria-label="<?php esc_attr_e('Search', 'impexusone'); ?>" required>
-            <button type="submit" class="btn btn-primary"><?php esc_html_e('Search', 'impexusone'); ?></button>
-        </form>
+    <div class="search-modal-wrapper">
+        <button type="button" class="search-modal-close" id="search-modal-close" aria-label="<?php esc_attr_e('Close search', 'impexusone'); ?>">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="search-modal-content">
+            <h2 id="search-modal-title" class="sr-only"><?php esc_html_e('Search', 'impexusone'); ?></h2>
+            <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search-modal-form">
+                <input type="search" name="s" class="search-modal-input" placeholder="<?php echo esc_attr($search_placeholder); ?>" aria-label="<?php esc_attr_e('Search', 'impexusone'); ?>" required>
+                <button type="submit" class="btn btn-primary"><?php esc_html_e('Search', 'impexusone'); ?></button>
+            </form>
+        </div>
     </div>
 </div>
 <?php endif; ?>

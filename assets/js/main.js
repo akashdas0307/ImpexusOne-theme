@@ -116,17 +116,21 @@
             });
         }
 
-        // Prevent clicks on modal content from closing modal
-        if (searchModalContent) {
-            searchModalContent.addEventListener('click', function (e) {
-                e.stopPropagation();
+        // Prevent clicks on modal wrapper (contains close btn + content) from closing modal
+        const searchModalWrapper = searchModal ? searchModal.querySelector('.search-modal-wrapper') : null;
+        if (searchModalWrapper) {
+            searchModalWrapper.addEventListener('click', function (e) {
+                // Only stop propagation if not clicking the close button
+                if (!e.target.closest('.search-modal-close')) {
+                    e.stopPropagation();
+                }
             });
         }
 
         // Close modal on backdrop (overlay) click
         if (searchModal) {
             searchModal.addEventListener('click', function (e) {
-                // Only close if clicking directly on the modal backdrop
+                // Close when clicking on the modal backdrop (not children)
                 if (e.target === searchModal) {
                     closeModal();
                 }

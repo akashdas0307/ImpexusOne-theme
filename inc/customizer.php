@@ -624,16 +624,23 @@ function impexusone_customizer_css() {
 
         /* Submenu Arrow Indicators */
         <?php if ($show_submenu_arrows) : ?>
+        .nav-menu > li.menu-item-has-children > a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
         .nav-menu > li.menu-item-has-children > a::after {
             content: '';
             display: inline-block;
             width: 0;
             height: 0;
-            margin-left: 6px;
-            vertical-align: middle;
             border-left: 4px solid transparent;
             border-right: 4px solid transparent;
             border-top: 5px solid currentColor;
+            transition: transform 0.2s;
+        }
+        .nav-menu > li.menu-item-has-children:hover > a::after {
+            transform: rotate(180deg);
         }
         <?php endif; ?>
 
@@ -671,16 +678,19 @@ function impexusone_customizer_css() {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding-top: 15vh;
+            padding-top: 12vh;
+        }
+
+        .search-modal-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 550px;
         }
 
         .search-modal-content {
-            position: relative;
             background-color: #fff;
             border-radius: 12px;
             padding: 2rem;
-            width: 90%;
-            max-width: 550px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
@@ -705,16 +715,21 @@ function impexusone_customizer_css() {
 
         .search-modal-close {
             position: absolute;
-            top: -3rem;
+            top: -50px;
             right: 0;
-            background: none;
+            background: rgba(255,255,255,0.2);
             border: none;
-            font-size: 2.5rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
             cursor: pointer;
             color: #fff;
             line-height: 1;
-            padding: 0.5rem;
-            transition: transform 0.2s;
+            transition: background 0.2s, transform 0.2s;
         }
 
         .search-modal-close:hover {
