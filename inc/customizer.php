@@ -835,14 +835,14 @@ function impexusone_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('footer_copyright_text', array(
-        'default'           => __('© %year% %sitename%. All rights reserved.', 'impexusone'),
+        'default'           => __('© {year} {sitename}. All rights reserved.', 'impexusone'),
         'transport'         => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control('footer_copyright_text', array(
         'label'       => __('Copyright Text', 'impexusone'),
-        'description' => __('Use %year% for current year, %sitename% for site name.', 'impexusone'),
+        'description' => __('Use {year} for current year, {sitename} for site name.', 'impexusone'),
         'section'     => 'impexusone_footer_bottom',
         'type'        => 'text',
     ));
