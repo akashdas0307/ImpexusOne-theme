@@ -30,7 +30,7 @@ $cta_label           = get_theme_mod('footer_cta_label', 'Need immediate assista
 $cta_text            = get_theme_mod('footer_cta_text', 'Book a Consultation');
 $cta_url             = get_theme_mod('footer_cta_url', home_url('/contact/'));
 
-$copyright_text      = get_theme_mod('footer_copyright_text', '© %year% %sitename%. All rights reserved.');
+$copyright_text      = get_theme_mod('footer_copyright_text', '© {year} {sitename}. All rights reserved.');
 
 // Social URLs (shared with header)
 $social_linkedin  = get_theme_mod('social_linkedin_url', 'https://linkedin.com/company/impexus');
@@ -220,7 +220,7 @@ $social_instagram = get_theme_mod('social_instagram_url', '');
                 <p class="footer-copyright">
                     <?php
                     $copyright = str_replace(
-                        array('%year%', '%sitename%'),
+                        array('{year}', '{sitename}'),
                         array(date('Y'), get_bloginfo('name')),
                         $copyright_text
                     );

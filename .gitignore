@@ -2,6 +2,10 @@
 Design/
 Design
 
+# Agent files
+.agent/
+.agent
+
 # OS generated files
 .DS_Store
 .DS_Store?
